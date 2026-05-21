@@ -291,7 +291,7 @@ export const process = [
 export const testimonials = [
   {
     quote:
-      "Dop Cellar's delivery of our branch electrification and ATM infrastructure was disciplined and meticulously documented. They held to scope and timeline.",
+      "DopCellar Merit's delivery of our branch electrification and ATM infrastructure was disciplined and meticulously documented. They held to scope and timeline.",
     name: "Adaeze Okonkwo",
     role: "Head of Branch Operations",
     company: "Tier-1 Commercial Bank",
@@ -305,7 +305,7 @@ export const testimonials = [
   },
   {
     quote:
-      "We engaged Dop Cellar for the structural and MEP build-out of a mixed-use development. Engineering rigor and execution were genuinely world class.",
+      "We engaged DopCellar Merit for the structural and MEP build-out of a mixed-use development. Engineering rigor and execution were genuinely world class.",
     name: "Ifeoma Eze",
     role: "Managing Director",
     company: "Regional Property Developer",
