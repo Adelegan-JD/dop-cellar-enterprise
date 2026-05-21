@@ -11,7 +11,7 @@ export function About() {
             <SectionHeader
               eyebrow="About the Firm"
               title="A serious engineering partner for Nigeria's most demanding infrastructure."
-              description="Dop Cellar Global Limited engineers, deploys, and maintains the physical and electronic systems that critical operations depend on — from banking branches and corporate facilities to industrial plants and government infrastructure."
+              description="DopCellar Merit Global Limited engineers, deploys, and maintains the physical and electronic systems that critical operations depend on — from banking branches and corporate facilities to industrial plants and government infrastructure."
             />
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               {[

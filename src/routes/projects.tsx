@@ -8,11 +8,11 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
   head: () => ({
     meta: [
-      { title: "Projects — Dop Cellar Global Limited" },
+      { title: "Projects — DopCellar Merit Global Limited" },
       {
         name: "description",
         content:
-          "Selected case studies across banking, security, electrical, and network infrastructure programs delivered by Dop Cellar Global Limited.",
+          "Selected case studies across banking, security, electrical, and network infrastructure programs delivered by DopCellar Merit Global Limited.",
       },
     ],
   }),

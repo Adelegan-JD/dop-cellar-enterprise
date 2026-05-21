@@ -6,11 +6,11 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact — Dop Cellar Global Limited" },
+      { title: "Contact — DopCellar Merit Global Limited" },
       {
         name: "description",
         content:
-          "Speak with the Dop Cellar engineering team. Head office in Port Harcourt, Rivers State, Nigeria.",
+          "Speak with the DopCellar Merit engineering team. Head office in Port Harcourt, Rivers State, Nigeria.",
       },
     ],
   }),

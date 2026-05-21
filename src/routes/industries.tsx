@@ -8,11 +8,11 @@ export const Route = createFileRoute("/industries")({
   component: IndustriesPage,
   head: () => ({
     meta: [
-      { title: "Industries — Dop Cellar Global Limited" },
+      { title: "Industries — DopCellar Merit Global Limited" },
       {
         name: "description",
         content:
-          "Sectors served by Dop Cellar Global Limited: banking, government, industrial operations, commercial real estate, residential, and corporate facilities.",
+          "Sectors served by DopCellar Merit Global Limited: banking, government, industrial operations, commercial real estate, residential, and corporate facilities.",
       },
     ],
   }),

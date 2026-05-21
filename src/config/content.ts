@@ -27,7 +27,167 @@ import cctv from "../assets/cctv.jpg";
 import construction from "../assets/construction.jpg";
 import industrial from "../assets/industrial.jpg";
 
+import bulletCamera from "../assets/products/bullet-camera.jpg";
+import cameraRange from "../assets/products/camera-range.jpg";
+import cctvSystem from "../assets/products/cctv-system.jpg";
+import cctvKit from "../assets/products/cctv-kit.jpg";
+import exitAlarm from "../assets/products/exit-alarm.jpg";
+import fingerprintAccess from "../assets/products/fingerprint-access.jpg";
+import hikvisionBullet from "../assets/products/hikvision-bullet.jpg";
+import alarmSystem from "../assets/products/alarm-system.jpg";
+import speedDome from "../assets/products/speed-dome.jpg";
+
 export const heroImage = hero;
+
+export interface Product {
+  slug: string;
+  name: string;
+  category: string;
+  image: string;
+  shortDescription: string;
+  specifications: string[];
+  useCases: string[];
+}
+
+export const products: Product[] = [
+  {
+    slug: "bullet-security-camera",
+    name: "Bullet Style Security Camera",
+    category: "CCTV & Surveillance",
+    image: bulletCamera,
+    shortDescription:
+      "Weatherproof IR bullet camera engineered for perimeter surveillance and 24/7 outdoor monitoring.",
+    specifications: [
+      "HD resolution with IR night vision up to 30m",
+      "IP66 weatherproof housing",
+      "Wide-angle fixed lens",
+      "BNC/IP output compatible with standard DVR/NVR",
+    ],
+    useCases: ["Perimeter monitoring", "Car parks", "Warehouse exteriors"],
+  },
+  {
+    slug: "hikvision-outdoor-bullet",
+    name: "Hikvision Outdoor Bullet Camera",
+    category: "CCTV & Surveillance",
+    image: hikvisionBullet,
+    shortDescription:
+      "Hikvision-grade outdoor bullet camera with professional optics and OEM-grade reliability.",
+    specifications: [
+      "Hikvision OEM imaging sensor",
+      "Day/night auto switching",
+      "Vandal-resistant aluminium housing",
+      "PoE / 12V DC powered",
+    ],
+    useCases: ["Bank ATM lobbies", "Commercial buildings", "Government facilities"],
+  },
+  {
+    slug: "speed-dome-ptz-camera",
+    name: "Z-BEN Speed Dome PTZ Camera",
+    category: "CCTV & Surveillance",
+    image: speedDome,
+    shortDescription:
+      "High-speed pan-tilt-zoom dome camera for active surveillance over wide coverage areas.",
+    specifications: [
+      "360° pan / 90° tilt",
+      "Optical zoom with auto-focus",
+      "IR illumination for low-light operation",
+      "Preset patrol & auto-tracking",
+    ],
+    useCases: ["Industrial yards", "Estate gatehouses", "Control-room monitoring"],
+  },
+  {
+    slug: "cctv-system-kit",
+    name: "Multi-Channel CCTV System",
+    category: "Surveillance Kits",
+    image: cctvSystem,
+    shortDescription:
+      "Turnkey multi-camera CCTV bundle with DVR, monitors and centralized control-room view.",
+    specifications: [
+      "4 / 8 / 16-channel DVR options",
+      "Mixed dome + bullet camera kit",
+      "Multi-screen live monitoring",
+      "Remote mobile viewing",
+    ],
+    useCases: ["Retail outlets", "Branch offices", "Hospitality"],
+  },
+  {
+    slug: "cctv-starter-kit",
+    name: "CCTV Starter Kit (DVR + Cameras + Monitor)",
+    category: "Surveillance Kits",
+    image: cctvKit,
+    shortDescription:
+      "Complete plug-and-play CCTV kit including DVR, dome and bullet cameras, and dedicated monitor.",
+    specifications: [
+      "DVR with HDD bay",
+      "Mixed indoor/outdoor cameras",
+      "Dedicated CCTV monitor included",
+      "Cabling and connectors bundled",
+    ],
+    useCases: ["Small businesses", "Residences", "Site offices"],
+  },
+  {
+    slug: "ip-camera-range",
+    name: "IP Camera & Detector Range",
+    category: "Surveillance Components",
+    image: cameraRange,
+    shortDescription:
+      "Catalog of IP cameras, smoke detectors, dome cameras and NVR units for custom system design.",
+    specifications: [
+      "Dome, bullet, PTZ and pinhole form factors",
+      "Smoke & motion detectors",
+      "Standalone NVR/DVR units",
+      "Vendor-mixed for scope flexibility",
+    ],
+    useCases: ["Custom-engineered systems", "Multi-site rollouts"],
+  },
+  {
+    slug: "fingerprint-door-access",
+    name: "Fingerprint Door Access Controller",
+    category: "Access Control",
+    image: fingerprintAccess,
+    shortDescription:
+      "Biometric door access controller combining fingerprint, PIN and card credentials.",
+    specifications: [
+      "Fingerprint + PIN + RFID card",
+      "On-device user enrolment",
+      "Audit log of entries/exits",
+      "Integrates with electric strike / maglock",
+    ],
+    useCases: ["Server rooms", "Executive offices", "Restricted-area entry"],
+  },
+  {
+    slug: "exit-alarm-button",
+    name: "Door Exit Alarm Push Button",
+    category: "Access Control",
+    image: exitAlarm,
+    shortDescription:
+      "Stainless steel illuminated exit-release button for controlled-door egress systems.",
+    specifications: [
+      "Stainless steel faceplate",
+      "Illuminated LED ring",
+      "NO/NC dry-contact output",
+      "Flush-mount installation",
+    ],
+    useCases: ["Access-controlled doors", "Banking halls", "Secure rooms"],
+  },
+  {
+    slug: "wireless-alarm-system",
+    name: "Wireless Intrusion Alarm System",
+    category: "Intrusion & Alarms",
+    image: alarmSystem,
+    shortDescription:
+      "Complete wireless alarm system with PIR motion sensors, panic remote and central control panel.",
+    specifications: [
+      "Central control panel with keypad & LCD",
+      "Wireless PIR motion sensor",
+      "Panic / remote arming key fob",
+      "Door/window contact sensors included",
+    ],
+    useCases: ["Residential security", "Small offices", "Retail shops"],
+  },
+];
+
+
 
 export interface Service {
   slug: string;
@@ -291,7 +451,7 @@ export const process = [
 export const testimonials = [
   {
     quote:
-      "Dop Cellar's delivery of our branch electrification and ATM infrastructure was disciplined and meticulously documented. They held to scope and timeline.",
+      "DopCellar Merit's delivery of our branch electrification and ATM infrastructure was disciplined and meticulously documented. They held to scope and timeline.",
     name: "Adaeze Okonkwo",
     role: "Head of Branch Operations",
     company: "Tier-1 Commercial Bank",
@@ -305,7 +465,7 @@ export const testimonials = [
   },
   {
     quote:
-      "We engaged Dop Cellar for the structural and MEP build-out of a mixed-use development. Engineering rigor and execution were genuinely world class.",
+      "We engaged DopCellar Merit for the structural and MEP build-out of a mixed-use development. Engineering rigor and execution were genuinely world class.",
     name: "Ifeoma Eze",
     role: "Managing Director",
     company: "Regional Property Developer",

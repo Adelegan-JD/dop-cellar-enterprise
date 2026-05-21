@@ -4,12 +4,12 @@
  */
 
 export const site = {
-  name: "Dop Cellar Global Limited",
-  shortName: "Dop Cellar",
-  legalName: "Dop Cellar Global Limited",
+  name: "DopCellar Merit Global Limited",
+  shortName: "DopCellar Merit",
+  legalName: "DopCellar Merit Global Limited",
   tagline: "Engineering Infrastructure for Nigeria's Future",
   description:
-    "Dop Cellar Global Limited delivers electrical engineering, automation, construction, security infrastructure, and industrial technology solutions across Nigeria.",
+    "DopCellar Merit Global Limited delivers electrical engineering, automation, construction, security infrastructure, and industrial technology solutions across Nigeria.",
   url: "https://dopcellar.com",
   manager: {
     name: "Samuel Oladimeji Dopamu",
@@ -17,9 +17,9 @@ export const site = {
   },
   contact: {
     email: "dopcellarmerit@gmail.com",
-    phone: "+234 806 665 4689",
-    phoneE164: "+2348066654689",
-    whatsapp: "2348066654689",
+    phone: "+234 909 811 1974",
+    phoneE164: "+2349098111974",
+    whatsapp: "2349098111974",
     address: {
       line1: "4 Creek View Drive, Woji",
       city: "Port Harcourt",
@@ -39,11 +39,12 @@ export const site = {
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
   { label: "Projects", href: "/projects" },
   { label: "Industries", href: "/industries" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
-export const whatsappLink = (message = "Hello Dop Cellar, I'd like to request a consultation.") =>
+export const whatsappLink = (message = "Hello DopCellar Merit, I'd like to request a consultation.") =>
   `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(message)}`;

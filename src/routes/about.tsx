@@ -9,11 +9,11 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About — Dop Cellar Global Limited" },
+      { title: "About — DopCellar Merit Global Limited" },
       {
         name: "description",
         content:
-          "Dop Cellar Global Limited is a Nigerian engineering, infrastructure, and industrial technology firm headquartered in Port Harcourt.",
+          "DopCellar Merit Global Limited is a Nigerian engineering, infrastructure, and industrial technology firm headquartered in Port Harcourt.",
       },
     ],
   }),
