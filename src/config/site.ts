@@ -17,9 +17,9 @@ export const site = {
   },
   contact: {
     email: "dopcellarmerit@gmail.com",
-    phone: "+234 806 665 4689",
-    phoneE164: "+2348066654689",
-    whatsapp: "2348066654689",
+    phone: "+234 909 811 1974",
+    phoneE164: "+2349098111974",
+    whatsapp: "2349098111974",
     address: {
       line1: "4 Creek View Drive, Woji",
       city: "Port Harcourt",
