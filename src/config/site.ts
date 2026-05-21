@@ -47,4 +47,4 @@ export const nav = [
 ] as const;
 
 export const whatsappLink = (message = "Hello DopCellar Merit, I'd like to request a consultation.") =>
-  `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(message)}`;
+  `https://api.whatsapp.com/send?phone=${site.contact.whatsapp}&text=${encodeURIComponent(message)}`;
