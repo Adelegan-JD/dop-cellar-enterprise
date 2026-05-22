@@ -1,83 +1,74 @@
-# Dop Cellar Global Limited — Premium Corporate Website
+# Catalog expansion + T=0 project knowledge
 
-A serious, enterprise-grade marketing site in the visual league of Siemens / Schneider Electric / ABB. Calm, technical, premium. Built with a modular architecture so future dashboards, admin portals, inventory, CRM, and AI/WhatsApp integrations slot in cleanly.
+## What you'll get
 
-## Important note on stack
+1. **Logo-branded product images** — every catalog image gets a bottom-center strip carrying the DopCellar Merit logo + company name.
+2. **New products extracted from the 3 PDFs** (Alarm Kits, Access Controller Keypads/QR, Access Readers/Exit Button) — image + description only, no prices.
+3. **New "Power & Energy Solutions" category** with the 3 power-station photos you uploaded (EcoFlow 1kVA, 300W portable generator, EcoFlow River 300W).
+4. **Project knowledge captured at T=0** — both internal agent memory and a readable `PROJECT_OVERVIEW.md` in the repo.
 
-You asked for Next.js 14. Lovable projects run on **Vite + React + TypeScript + Tailwind + Framer Motion** (not Next.js). The architecture, SEO patterns, component model, and deploy story are equivalent for a marketing site, and the codebase will remain fully portable to Next.js later if needed. I'll proceed on the Lovable stack unless you say otherwise.
+## Image pipeline
 
-## Design system
+For every new product image:
 
-- Palette: deep navy `#0A1628` base, charcoal `#111827` surfaces, white typography, muted gold `#C9A24C` accent, subtle steel-blue gradients.
-- Typography: Inter (UI) + a refined serif/grotesque pair for editorial headings (e.g. Instrument Serif or Sora) — restrained, enterprise hierarchy.
-- Surfaces: hairline 1px borders, soft inner glow, sparing glassmorphism on nav + cards only.
-- Motion: Framer Motion — slow fades, 200–400ms eases, subtle parallax on hero, no bounce, no neon, no loud gradients.
-- Dark mode primary; light mode as a polished alternate (toggle in nav).
-- Semantic design tokens defined in `index.css` + `tailwind.config.ts` (no hardcoded colors in components).
+1. Extract from PDF (or use uploaded photo).
+2. Crop tightly to the product, white background.
+3. Composite a bottom-center branding strip:
 
-## Page & section structure (single-page with anchored routes + dedicated sub-pages)
+   ```text
+   ┌──────────────────────────────┐
+   │                              │
+   │        [ product ]           │
+   │                              │
+   ├──────────────────────────────┤
+   │  [logo]  DopCellar Merit     │  ← branding strip
+   └──────────────────────────────┘
+   ```
 
-Routes:
-- `/` Home (all marquee sections)
-- `/services` and `/services/:slug`
-- `/projects` and `/projects/:slug`
-- `/industries`
-- `/about`
-- `/contact`
+4. Save as `src/assets/products/<descriptive-slug>.jpg` (e.g. `alarm-kit-h5-wifi-gsm.jpg`, `power-station-ecoflow-1kva.jpg`).
+5. Register in `src/config/content.ts` → `products[]` with name, category, description, specs, use-cases.
 
-Home sections:
-1. Sticky enterprise navbar (blur, scroll-aware, mobile drawer, theme toggle, "Request Consultation" CTA)
-2. Hero — cinematic engineering imagery, dark overlay, animated grid, headline + sub + 2 CTAs, animated KPI strip (120+ / 15+ / 98% / 24/7)
-3. About — corporate narrative + leadership card for Samuel Oladimeji Dopamu
-4. Services — 10 enterprise cards with minimal line icons
-5. Industries — 6 sectors with iconography
-6. Why Choose Us — 7 feature blocks
-7. Projects — 5 case-study cards with hover overlays + metadata
-8. Process — 6-step engineering timeline
-9. Testimonials — banking / facilities / developer / industrial voices
-10. Contact — form (zod-validated), click-to-call, WhatsApp deep link, address, map placeholder, socials
-11. Footer — overview, nav, services, contact, socials, legal row
-12. Floating WhatsApp button + scroll progress bar
+**Naming convention:** `<category-prefix>-<model>-<variant>.jpg` — lowercase, hyphen-separated, no spaces.
 
-## Frontend architecture (built for future backend)
+## New product categories
 
-```text
-src/
-  app/               route components (pages)
-  components/
-    layout/          Navbar, Footer, ThemeToggle, ScrollProgress, WhatsAppFab
-    sections/        Hero, About, Services, Industries, WhyUs, Projects,
-                     Process, Testimonials, Contact
-    ui/              shadcn primitives (Button, Card, Input, ...)
-    common/          SectionHeader, StatCounter, GradientGrid, Reveal
-  features/          future domains: inventory/, sales/, crm/, dashboard/,
-                     chatbot/, whatsapp/, analytics/  (empty scaffolds + README)
-  lib/               api client, env, seo, analytics, motion presets
-  config/            site.ts (company info, nav, socials), services.ts,
-                     projects.ts, industries.ts, testimonials.ts, process.ts
-  hooks/             useScrollProgress, useReducedMotion, useTheme
-  types/             shared TS types
-  assets/            generated imagery
-```
+- **Power & Energy Solutions** — 3 portable power stations (from your uploads).
+- **Intrusion & Alarms** — expanded with GSM/WiFi alarm kits from the Alarm Systems PDF (H5, H6, SA6PB/SA6PW, SA5P, SX1, SA6C, SA7M2B).
+- **Access Control** — expanded with keypads, QR readers, card readers, exit buttons from the two Access PDFs.
 
-- All marketing content lives in typed config files so a future CMS/Cloud backend can swap them out without touching components.
-- `features/` folders are pre-scaffolded for inventory, sales, CRM, dashboards, chatbot, WhatsApp, analytics — each with a README describing the integration contract.
-- SEO: per-route `<title>`, meta description, canonical, OpenGraph, JSON-LD (`Organization` + `LocalBusiness` with full NAP), single H1 per page, semantic HTML, alt text, lazy images, responsive viewport.
+I will exclude all pricing, vendor (Sesame Access), and shipping info — only product name, image, and technical description.
 
-## Imagery
+## UI changes
 
-Generated via the image tool at premium tier: industrial electrical rooms, server/network racks, CCTV/control room, structural construction, banking automation, port-harcourt-style commercial facility, leadership portrait placeholder. Saved under `src/assets/` and imported as ES modules.
+- `Products.tsx` already supports category badges — no component changes needed.
+- Category filter chips added to `/products` page so visitors can filter by Surveillance / Access Control / Alarms / Power & Energy.
+- Home page still shows the first 6 (highlights mix from each category).
 
-## Company data wired in
+## Project knowledge (T=0)
 
-Name, tagline, manager, address (4 Creek View Drive, Woji, Port Harcourt), phone, email, and all six socials (Instagram, Facebook, LinkedIn, YouTube, X, plus WhatsApp via phone) centralized in `config/site.ts`.
+**`mem://index.md`** — Core rules + memory references covering:
+- Company identity (name, phone, WhatsApp link format)
+- Brand: dark theme, gold accent, hairline borders, Apple-like minimal
+- Tech stack: TanStack Start, Vite, Tailwind, shadcn, no Cloud yet
+- Catalog system: products live in `src/config/content.ts`, images in `src/assets/products/`
+- Deployment: Vercel + Docker, CI via GitHub Actions, health endpoint at `/api/health`
+- Image rule: every catalog image must carry the bottom-center DopCellar Merit branding strip
 
-## Out of scope for this build
+**`PROJECT_OVERVIEW.md`** (repo root) — human-readable doc:
+- What the site is
+- Pages and what each does
+- How to add a new product (3-step guide pointing at `content.ts`)
+- How the image branding pipeline works (so you or another dev can re-run it on new images)
+- Deployment + environment refs (links to existing `DEPLOYMENT.md` / `ENVIRONMENT.md`)
 
-- Real backend (kept frontend-only; Lovable Cloud can be enabled later for forms, auth, inventory, etc.)
-- Real CMS (config-file driven for now)
-- Real map embed (placeholder block with location metadata)
+## Technical notes
 
-## Deliverable
+- Image compositing done in a Node script using `sharp` (already in lockfile transitively via Vite — will install if missing). One-shot script at `scripts/brand-product-image.mjs` so you can re-run it on future uploads.
+- Logo file expected at `src/assets/brand/logo.png` (from the `cellar3` upload you mentioned).
+- If the uploaded logo isn't found at build time, the script falls back to a text-only branding strip in brand gold so the build never breaks.
 
-A production-ready, SEO-optimized, fully responsive enterprise marketing site with a modular structure that future dashboards, admin portals, and AI/automation features can extend without refactoring.
+## Out of scope (next time)
+
+- Per-product detail pages with full spec sheets
+- Search / filtering beyond category chips
+- Online quote / cart flow (currently WhatsApp invoice request, unchanged)
