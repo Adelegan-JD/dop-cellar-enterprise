@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -6,8 +7,23 @@ import { products } from "@/config/content";
 import { fadeUp, staggerChildren } from "@/lib/motion";
 import { whatsappLink } from "@/config/site";
 
-export function Products({ limit }: { limit?: number }) {
-  const items = typeof limit === "number" ? products.slice(0, limit) : products;
+export function Products({
+  limit,
+  showFilters = false,
+}: {
+  limit?: number;
+  showFilters?: boolean;
+}) {
+  const allCategories = useMemo(
+    () => Array.from(new Set(products.map((p) => p.category))),
+    [],
+  );
+  const [active, setActive] = useState<string>("All");
+
+  const filtered = useMemo(() => {
+    const base = active === "All" ? products : products.filter((p) => p.category === active);
+    return typeof limit === "number" ? base.slice(0, limit) : base;
+  }, [active, limit]);
 
   return (
     <section id="products" className="relative border-t border-hairline py-24 md:py-32">
@@ -16,7 +32,7 @@ export function Products({ limit }: { limit?: number }) {
           <SectionHeader
             eyebrow="Products & Catalog"
             title="Security, surveillance and access-control hardware we supply and install."
-            description="Procurement-grade catalog of CCTV cameras, DVR/NVR kits, biometric access control and intrusion alarms. Request a quote or full invoice for any item."
+            description="Procurement-grade catalog of CCTV cameras, DVR/NVR kits, biometric access control, intrusion alarms and portable power. Request a quote or full invoice for any item."
           />
           {typeof limit === "number" && (
             <Link
@@ -29,14 +45,37 @@ export function Products({ limit }: { limit?: number }) {
           )}
         </div>
 
+        {showFilters && (
+          <div className="mt-10 flex flex-wrap gap-2">
+            {["All", ...allCategories].map((cat) => {
+              const isActive = active === cat;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActive(cat)}
+                  className={`rounded-full border px-4 py-1.5 text-[12px] uppercase tracking-[0.16em] transition-colors ${
+                    isActive
+                      ? "border-gold bg-gold/10 text-gold"
+                      : "border-hairline text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         <motion.div
+          key={active}
           variants={staggerChildren}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
           className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {items.map((p) => (
+          {filtered.map((p) => (
             <motion.article
               key={p.slug}
               variants={fadeUp}

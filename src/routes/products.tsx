@@ -31,7 +31,7 @@ function ProductsPage() {
         title="Catalog of security, surveillance and access-control hardware."
         description="Browse the equipment we supply, install and maintain. Request an invoice or quotation for any item directly via WhatsApp or our contact form."
       />
-      <Products />
+      <Products showFilters />
     </>
   );
 }

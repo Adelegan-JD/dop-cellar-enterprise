@@ -37,6 +37,21 @@ import hikvisionBullet from "../assets/products/hikvision-bullet.jpg";
 import alarmSystem from "../assets/products/alarm-system.jpg";
 import speedDome from "../assets/products/speed-dome.jpg";
 
+// Branded catalog images (DopCellar Merit strip applied)
+import alarmKitH5 from "../assets/products/alarm-kit-h5-wifi-gsm.jpg";
+import alarmKitH6 from "../assets/products/alarm-kit-h6-wifi-4g.jpg";
+import alarmKitSa6pb from "../assets/products/alarm-kit-sa6pb-touchscreen.jpg";
+import alarmKitSa5p from "../assets/products/alarm-kit-sa5p-wifi-4g.jpg";
+import alarmKitSx1 from "../assets/products/alarm-kit-sx1-smart-home.jpg";
+import accessKeypadMetalRfid from "../assets/products/access-keypad-metal-rfid.jpg";
+import accessKeypadSlimWireless from "../assets/products/access-keypad-slim-wireless.jpg";
+import accessFingerprintTouch from "../assets/products/access-fingerprint-touch-keypad.jpg";
+import accessKeypadWeatherproof from "../assets/products/access-keypad-weatherproof-rfid.jpg";
+import accessKeypadCompactMetal from "../assets/products/access-keypad-compact-metal.jpg";
+import powerStationEcoflow1kva from "../assets/products/power-station-ecoflow-1kva.jpg";
+import powerStation300wPortable from "../assets/products/power-station-300w-portable.jpg";
+import powerStationEcoflowRiver from "../assets/products/power-station-ecoflow-river-300w.jpg";
+
 export const heroImage = hero;
 
 export interface Product {
@@ -184,6 +199,219 @@ export const products: Product[] = [
       "Door/window contact sensors included",
     ],
     useCases: ["Residential security", "Small offices", "Retail shops"],
+  },
+
+  // ─── Intrusion & Alarms — branded catalog ─────────────────────────────
+  {
+    slug: "alarm-kit-h5-wifi-gsm",
+    name: "H5 WiFi + GSM Smart Alarm Kit",
+    category: "Intrusion & Alarms",
+    image: alarmKitH5,
+    shortDescription:
+      "4.3-inch touchscreen WiFi + GSM alarm panel with PIR detector, door sensor, siren and remote controllers.",
+    specifications: [
+      "4.3\" TFT colour touch screen",
+      "WiFi + 2G GSM (4G variant available)",
+      "iOS & Android app, SMS push alerts",
+      "Door-bell / Ready-To-Arm modes",
+      "8 languages, low-battery & sensor-lost monitoring",
+    ],
+    useCases: ["Residential security", "Small offices", "Retail outlets"],
+  },
+  {
+    slug: "alarm-kit-h6-wifi-4g",
+    name: "H6 WiFi + 4G Alarm System",
+    category: "Intrusion & Alarms",
+    image: alarmKitH6,
+    shortDescription:
+      "4G cellular alarm panel with built-in siren — operates over mobile data, no WiFi required.",
+    specifications: [
+      "App control via 4G GPRS — no WiFi needed",
+      "Up to 46 wireless detectors + 8 remotes",
+      "6 phone-call + 3 SMS alert numbers",
+      "Built-in siren and 30-hour backup battery",
+      "OTA firmware upgrade",
+    ],
+    useCases: ["Remote sites", "Estate gatehouses", "Off-grid facilities"],
+  },
+  {
+    slug: "alarm-kit-sa6pb-touchscreen",
+    name: "SA6PB Touchscreen Alarm Kit (Black)",
+    category: "Intrusion & Alarms",
+    image: alarmKitSa6pb,
+    shortDescription:
+      "WiFi + 2G alarm with 4.3-inch touch panel, voice message recording, and RFID tag support.",
+    specifications: [
+      "4.3\" TFT colour touch screen",
+      "WiFi + 2G GSM (WiFi + 4G variant available)",
+      "Up to 100 remotes / detectors / RFID tags",
+      "20-second voice message",
+      "Last 100 events logged on-device",
+    ],
+    useCases: ["Residential", "Branch offices", "Boutique retail"],
+  },
+  {
+    slug: "alarm-kit-sa5p-wifi-4g",
+    name: "SA5P WiFi + 4G Alarm System",
+    category: "Intrusion & Alarms",
+    image: alarmKitSa5p,
+    shortDescription:
+      "Full alarm bundle with WiFi + 4G connectivity, PIR detector, door sensor, siren, remotes and key fobs.",
+    specifications: [
+      "WiFi + 4G connectivity",
+      "Touch panel with 6-language support",
+      "Renamable defence zones",
+      "GPRS TCP/UDP protocol support",
+      "Includes 2 remotes + 2 fobs",
+    ],
+    useCases: ["SMB premises", "Warehouses", "Multi-tenant residential"],
+  },
+  {
+    slug: "alarm-kit-sx1-smart-home",
+    name: "SX1 WiFi + 4G Smart-Home Alarm",
+    category: "Intrusion & Alarms",
+    image: alarmKitSx1,
+    shortDescription:
+      "Contact-ID monitoring-station compatible alarm with Alexa, Google Home and IFTTT integration.",
+    specifications: [
+      "Contact ID protocol for central monitoring stations",
+      "Expandable to 50 sensors + 10 remotes",
+      "Two wired zones for smoke / gas / vibration / IR beams",
+      "Alarm output to trigger lights, TV etc. as deterrent",
+      "110dB internal siren with mute mode",
+      "Works with Alexa, Google Home, IFTTT",
+    ],
+    useCases: ["Smart homes", "Premium residential", "Monitored facilities"],
+  },
+
+  // ─── Access Control — branded catalog ────────────────────────────────
+  {
+    slug: "access-keypad-metal-rfid",
+    name: "Metal RFID Keypad Access Controller",
+    category: "Access Control",
+    image: accessKeypadMetalRfid,
+    shortDescription:
+      "Anti-vandal zinc-alloy keypad with EM/Mifare RFID reader for standalone door access.",
+    specifications: [
+      "2120 card / PIN user capacity",
+      "IP66 weatherproof, anti-vandal housing",
+      "EM/ID or Mifare/IC reader built in",
+      "Card / Card+PIN / PIN entry modes",
+      "Wiegand 26-58 bit in/out",
+    ],
+    useCases: ["Office doors", "Server rooms", "Banking back-offices"],
+  },
+  {
+    slug: "access-keypad-slim-wireless",
+    name: "Slim Wireless Keypad + Receiver Kit",
+    category: "Access Control",
+    image: accessKeypadSlimWireless,
+    shortDescription:
+      "Compact backlit keypad bundled with a wireless receiver — ideal for retrofit on existing doors.",
+    specifications: [
+      "Backlit numeric keypad with bell key",
+      "Wireless 433MHz receiver module included",
+      "Standalone or Wiegand operation",
+      "Surface-mount stainless faceplate",
+    ],
+    useCases: ["Retrofit installs", "Apartments", "Small offices"],
+  },
+  {
+    slug: "access-fingerprint-touch-keypad",
+    name: "Touch Keypad + Fingerprint Reader",
+    category: "Access Control",
+    image: accessFingerprintTouch,
+    shortDescription:
+      "Touch-surface keypad with integrated fingerprint sensor — multi-factor door access in one unit.",
+    specifications: [
+      "Capacitive touch keypad + fingerprint reader",
+      "300 fingerprints / 10000 cards/PINs",
+      "Entry: Fingerprint / Card / PIN",
+      "12-24V DC, IP-rated housing",
+      "Wiegand 26 in/out for integration",
+    ],
+    useCases: ["Executive offices", "Data rooms", "Restricted areas"],
+  },
+  {
+    slug: "access-keypad-weatherproof-rfid",
+    name: "Weatherproof RFID Keypad Controller",
+    category: "Access Control",
+    image: accessKeypadWeatherproof,
+    shortDescription:
+      "Outdoor-rated slim keypad with integrated RFID reader and bell key for perimeter doors.",
+    specifications: [
+      "IP66 weatherproof housing",
+      "EM/Mifare RFID reader built in",
+      "Standalone or networked Wiegand mode",
+      "Backlit keypad for low-light use",
+    ],
+    useCases: ["Perimeter gates", "Outdoor entries", "Industrial doorways"],
+  },
+  {
+    slug: "access-keypad-compact-metal",
+    name: "Compact Metal Keypad Access Controller",
+    category: "Access Control",
+    image: accessKeypadCompactMetal,
+    shortDescription:
+      "Narrow-form factor metal keypad designed for door frames and tight installations.",
+    specifications: [
+      "Slim narrow-frame design",
+      "PIN + RFID card entry",
+      "Anti-vandal metal housing",
+      "12V DC operation",
+      "Wiegand output for controller integration",
+    ],
+    useCases: ["Door-frame installs", "Estate gates", "Lift lobbies"],
+  },
+
+  // ─── Power & Energy Solutions ────────────────────────────────────────
+  {
+    slug: "power-station-ecoflow-1kva",
+    name: "EcoFlow 1kVA Portable Power Station",
+    category: "Power & Energy",
+    image: powerStationEcoflow1kva,
+    shortDescription:
+      "1kVA EcoFlow portable power station with UK socket, USB-A and USB-C — silent backup for offices and homes.",
+    specifications: [
+      "1kVA / 1000W AC output",
+      "UK BS-1363 socket + USB-A + USB-C",
+      "Three output modes: Low / Normal / High",
+      "Single-button AC ON/OFF",
+      "Pure sine wave output suitable for sensitive electronics",
+    ],
+    useCases: ["Office UPS backup", "Home power outages", "Field sites"],
+  },
+  {
+    slug: "power-station-300w-portable",
+    name: "300W Portable Power Station (Universal Socket)",
+    category: "Power & Energy",
+    image: powerStation300wPortable,
+    shortDescription:
+      "Rugged 300W power station with universal AC socket, 12V DC output, USB-C PD and triple USB outputs.",
+    specifications: [
+      "300W AC output via universal socket",
+      "DC 12V cigarette-style output",
+      "USB-C PD input/output + 3× USB-A outputs",
+      "LCD status display with DC input port",
+      "Carry-handle design for field deployment",
+    ],
+    useCases: ["Site offices", "Outdoor events", "Camping & travel"],
+  },
+  {
+    slug: "power-station-ecoflow-river-300w",
+    name: "EcoFlow River 300W Power Station",
+    category: "Power & Energy",
+    image: powerStationEcoflowRiver,
+    shortDescription:
+      "Compact EcoFlow River 300W station with UK socket, dual USB-A, USB-C and 12V DC — fast-charge ready.",
+    specifications: [
+      "300W AC output with UK socket",
+      "Dual USB-A + USB-C output",
+      "12V DC output port",
+      "Independent AC and DC on/off controls",
+      "Fast recharge with EcoFlow X-Stream technology",
+    ],
+    useCases: ["Workstations", "Routers / CCTV backup", "Mobile professionals"],
   },
 ];
 
