@@ -37,6 +37,21 @@ import hikvisionBullet from "../assets/products/hikvision-bullet.jpg";
 import alarmSystem from "../assets/products/alarm-system.jpg";
 import speedDome from "../assets/products/speed-dome.jpg";
 
+// Branded catalog images (DopCellar Merit strip applied)
+import alarmKitH5 from "../assets/products/alarm-kit-h5-wifi-gsm.jpg";
+import alarmKitH6 from "../assets/products/alarm-kit-h6-wifi-4g.jpg";
+import alarmKitSa6pb from "../assets/products/alarm-kit-sa6pb-touchscreen.jpg";
+import alarmKitSa5p from "../assets/products/alarm-kit-sa5p-wifi-4g.jpg";
+import alarmKitSx1 from "../assets/products/alarm-kit-sx1-smart-home.jpg";
+import accessKeypadMetalRfid from "../assets/products/access-keypad-metal-rfid.jpg";
+import accessKeypadSlimWireless from "../assets/products/access-keypad-slim-wireless.jpg";
+import accessFingerprintTouch from "../assets/products/access-fingerprint-touch-keypad.jpg";
+import accessKeypadWeatherproof from "../assets/products/access-keypad-weatherproof-rfid.jpg";
+import accessKeypadCompactMetal from "../assets/products/access-keypad-compact-metal.jpg";
+import powerStationEcoflow1kva from "../assets/products/power-station-ecoflow-1kva.jpg";
+import powerStation300wPortable from "../assets/products/power-station-300w-portable.jpg";
+import powerStationEcoflowRiver from "../assets/products/power-station-ecoflow-river-300w.jpg";
+
 export const heroImage = hero;
 
 export interface Product {
