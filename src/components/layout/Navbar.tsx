@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X, Moon, Sun, ArrowUpRight } from "lucide-react";
-import { nav, site } from "@/config/site";
+import { nav } from "@/config/site";
 import { useTheme } from "@/hooks/use-theme";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/common/Logo";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,19 +30,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:h-[72px]">
-        <Link to="/" className="group flex items-center gap-2.5" aria-label={site.name}>
-          <div className="grid h-8 w-8 place-items-center rounded-sm bg-gold/10 ring-1 ring-gold/30">
-            <span className="font-display text-[15px] leading-none text-gold">D</span>
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-[13px] font-semibold tracking-tight text-foreground">
-              {site.shortName}
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-              Global Limited
-            </span>
-          </div>
-        </Link>
+        <Logo />
 
         <nav className="hidden items-center gap-1 md:flex">
           {nav.map((item) => {

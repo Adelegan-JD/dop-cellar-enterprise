@@ -167,4 +167,42 @@
   .text-pretty { text-wrap: pretty; }
 
   .ring-hairline { box-shadow: inset 0 0 0 1px var(--color-hairline); }
+
+  /* Engineering motion — used by AnimatedBackdrop */
+  .animate-blob-slow {
+    animation: blob-drift 18s ease-in-out infinite;
+  }
+  .animate-blob-slower {
+    animation: blob-drift 26s ease-in-out infinite reverse;
+  }
+  .animate-grid-drift {
+    animation: grid-drift 40s linear infinite;
+  }
+  .animate-sweep {
+    animation: sweep 9s ease-in-out infinite;
+  }
+}
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  33%      { transform: translate3d(40px,-30px,0) scale(1.08); }
+  66%      { transform: translate3d(-30px,40px,0) scale(0.95); }
+}
+
+@keyframes grid-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 56px 56px; }
+}
+
+@keyframes sweep {
+  0%   { opacity: 0; transform: translateX(-30%); }
+  40%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(30%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob-slow,
+  .animate-blob-slower,
+  .animate-grid-drift,
+  .animate-sweep { animation: none !important; }
 }

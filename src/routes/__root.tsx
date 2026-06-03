@@ -127,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <head>
         <HeadContent />
       </head>
@@ -150,7 +150,7 @@ function RootComponent() {
       </main>
       <Footer />
       <WhatsAppFab />
-      <Toaster richColors position="bottom-left" theme="dark" />
+      <Toaster richColors position="bottom-left" />
     </QueryClientProvider>
   );
 }

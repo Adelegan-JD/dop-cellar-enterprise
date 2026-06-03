@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 type Theme = "dark" | "light";
 
 const STORAGE_KEY = "dopcellar-theme";
+const DEFAULT_THEME: Theme = "light";
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
@@ -12,10 +13,12 @@ function applyTheme(theme: Theme) {
 }
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>(DEFAULT_THEME);
 
   useEffect(() => {
-    const stored = (typeof window !== "undefined" && (localStorage.getItem(STORAGE_KEY) as Theme | null)) || "dark";
+    const stored =
+      (typeof window !== "undefined" && (localStorage.getItem(STORAGE_KEY) as Theme | null)) ||
+      DEFAULT_THEME;
     setTheme(stored);
     applyTheme(stored);
   }, []);
