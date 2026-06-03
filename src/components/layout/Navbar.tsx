@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X, Moon, Sun, ArrowUpRight } from "lucide-react";
-import { nav, site } from "@/config/site";
+import { nav } from "@/config/site";
 import { useTheme } from "@/hooks/use-theme";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/common/Logo";
