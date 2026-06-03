@@ -53,11 +53,23 @@ export function Contact() {
         <div className="mt-14 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="space-y-6">
-              <ContactRow icon={<MapPin className="h-4 w-4" />} label="Head Office">
-                {site.contact.address.line1}
-                <br />
-                {site.contact.address.city}, {site.contact.address.state}, {site.contact.address.country}
-              </ContactRow>
+              {site.offices.map((o) => (
+                <ContactRow
+                  key={o.city}
+                  icon={<MapPin className="h-4 w-4" />}
+                  label={o.role}
+                >
+                  {o.line1}
+                  {o.line2 && (
+                    <>
+                      <br />
+                      {o.line2}
+                    </>
+                  )}
+                  <br />
+                  {o.city}, {o.state}, {o.country}
+                </ContactRow>
+              ))}
               <ContactRow icon={<Phone className="h-4 w-4" />} label="Phone">
                 <a className="hover:text-gold" href={`tel:${site.contact.phoneE164}`}>
                   {site.contact.phone}
