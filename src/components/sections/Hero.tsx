@@ -3,24 +3,25 @@ import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StatCounter } from "@/components/common/StatCounter";
+import { AnimatedBackdrop } from "@/components/common/AnimatedBackdrop";
 import { heroImage } from "@/config/content";
 import { kpis } from "@/config/content";
 
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden pt-24">
-      {/* Background image */}
+      {/* Animated engineering backdrop */}
+      <AnimatedBackdrop />
+      {/* Faint hero photo for depth */}
       <div className="absolute inset-0 -z-10">
         <img
           src={heroImage}
           alt=""
           aria-hidden
-          className="h-full w-full object-cover opacity-[0.35]"
+          className="h-full w-full object-cover opacity-[0.18] mix-blend-luminosity"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
-        <div className="absolute inset-0 grid-backdrop radial-fade opacity-60" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 lg:pb-32 lg:pt-24">

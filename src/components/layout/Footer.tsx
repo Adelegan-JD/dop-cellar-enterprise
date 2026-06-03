@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { nav, site } from "@/config/site";
 import { services } from "@/config/content";
+import { Logo } from "@/components/common/Logo";
 
 export function Footer() {
   return (
@@ -9,17 +10,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-2.5">
-              <div className="grid h-8 w-8 place-items-center rounded-sm bg-gold/10 ring-1 ring-gold/30">
-                <span className="font-display text-[15px] leading-none text-gold">D</span>
-              </div>
-              <div className="leading-tight">
-                <div className="text-[13px] font-semibold text-foreground">{site.shortName}</div>
-                <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                  Global Limited
-                </div>
-              </div>
-            </div>
+            <Logo />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {site.description}
             </p>
