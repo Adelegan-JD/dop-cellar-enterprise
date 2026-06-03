@@ -1,6 +1,5 @@
 /**
- * Single source of truth for company info, navigation, and socials.
- * A future Lovable Cloud / CMS layer can replace these exports without touching components.
+ * Single source of truth for company info, navigation, socials, and inquiry forms.
  */
 
 export const site = {
@@ -20,12 +19,41 @@ export const site = {
     phone: "+234 909 811 1974",
     phoneE164: "+2349098111974",
     whatsapp: "2349098111974",
+    /**
+     * Head office (used by structured-data / schema.org).
+     * Multi-branch listing lives in `offices` below.
+     */
     address: {
+      line1: "60/63 Awolowo Junction, Adjacent Wema Bank Plc, Sango-Elewure Road",
+      city: "Ibadan",
+      state: "Oyo State",
+      country: "Nigeria",
+    },
+  },
+  offices: [
+    {
+      role: "Head Office",
+      line1: "60/63 Awolowo Junction, Adjacent Wema Bank Plc",
+      line2: "Sango-Elewure Road",
+      city: "Ibadan",
+      state: "Oyo State",
+      country: "Nigeria",
+    },
+    {
+      role: "Branch Office",
       line1: "4 Creek View Drive, Woji",
+      line2: "",
       city: "Port Harcourt",
       state: "Rivers State",
       country: "Nigeria",
     },
+  ],
+  /**
+   * Google Forms used for product / service inquiries.
+   */
+  forms: {
+    solar: "https://forms.gle/6eK3UbHhuDR9niwY9",
+    cctvAlarm: "https://forms.gle/2VsFZjT1dk7ebBmY7",
   },
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/dop-cellar-merit-global-limited/" },

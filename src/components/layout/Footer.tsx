@@ -65,12 +65,18 @@ export function Footer() {
               Contact
             </h3>
             <ul className="space-y-3 text-sm text-foreground/80">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <span>
-                  {site.contact.address.line1}, {site.contact.address.city}, {site.contact.address.state}
-                </span>
-              </li>
+              {site.offices.map((o) => (
+                <li key={o.city} className="flex items-start gap-2.5">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <span>
+                    <span className="block text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                      {o.role}
+                    </span>
+                    {o.line1}
+                    {o.line2 ? `, ${o.line2}` : ""}, {o.city}, {o.state}
+                  </span>
+                </li>
+              ))}
               <li className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 shrink-0 text-gold" />
                 <a href={`tel:${site.contact.phoneE164}`} className="hover:text-gold">

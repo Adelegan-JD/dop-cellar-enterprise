@@ -8,9 +8,12 @@ import {
   Factory,
   ShieldCheck,
   MessageSquare,
+  Sun,
+  Siren,
 } from "lucide-react";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { fadeUp, staggerChildren } from "@/lib/motion";
+import { site } from "@/config/site";
 
 const cards = [
   {
@@ -94,6 +97,52 @@ export function HomeSections() {
             );
           })}
         </motion.div>
+
+        {/* Inquiry form CTAs */}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          <a
+            href={site.forms.solar}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+          >
+            <div className="flex items-center gap-4">
+              <div className="grid h-11 w-11 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">
+                <Sun className="h-5 w-5 text-gold" />
+              </div>
+              <div>
+                <div className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Solar solution inquiry
+                </div>
+                <div className="font-display text-xl text-foreground">
+                  Request a solar quote
+                </div>
+              </div>
+            </div>
+            <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-gold" />
+          </a>
+          <a
+            href={site.forms.cctvAlarm}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+          >
+            <div className="flex items-center gap-4">
+              <div className="grid h-11 w-11 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">
+                <Siren className="h-5 w-5 text-gold" />
+              </div>
+              <div>
+                <div className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  CCTV & fire alarm inquiry
+                </div>
+                <div className="font-display text-xl text-foreground">
+                  Request a CCTV / alarm quote
+                </div>
+              </div>
+            </div>
+            <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-gold" />
+          </a>
+        </div>
       </div>
     </section>
   );

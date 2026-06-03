@@ -53,11 +53,23 @@ export function Contact() {
         <div className="mt-14 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="space-y-6">
-              <ContactRow icon={<MapPin className="h-4 w-4" />} label="Head Office">
-                {site.contact.address.line1}
-                <br />
-                {site.contact.address.city}, {site.contact.address.state}, {site.contact.address.country}
-              </ContactRow>
+              {site.offices.map((o) => (
+                <ContactRow
+                  key={o.city}
+                  icon={<MapPin className="h-4 w-4" />}
+                  label={o.role}
+                >
+                  {o.line1}
+                  {o.line2 && (
+                    <>
+                      <br />
+                      {o.line2}
+                    </>
+                  )}
+                  <br />
+                  {o.city}, {o.state}, {o.country}
+                </ContactRow>
+              ))}
               <ContactRow icon={<Phone className="h-4 w-4" />} label="Phone">
                 <a className="hover:text-gold" href={`tel:${site.contact.phoneE164}`}>
                   {site.contact.phone}
@@ -78,6 +90,37 @@ export function Contact() {
                   Start a conversation <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </ContactRow>
+            </div>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <a
+                href={site.forms.solar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-hairline bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-gold/40"
+              >
+                <div className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Inquiry form
+                </div>
+                <div className="mt-1.5 flex items-center justify-between gap-2">
+                  <div className="font-display text-lg text-foreground">Solar solution</div>
+                  <ArrowUpRight className="h-4 w-4 text-gold transition-transform group-hover:translate-x-0.5" />
+                </div>
+              </a>
+              <a
+                href={site.forms.cctvAlarm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-hairline bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-gold/40"
+              >
+                <div className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Inquiry form
+                </div>
+                <div className="mt-1.5 flex items-center justify-between gap-2">
+                  <div className="font-display text-lg text-foreground">CCTV & fire alarm</div>
+                  <ArrowUpRight className="h-4 w-4 text-gold transition-transform group-hover:translate-x-0.5" />
+                </div>
+              </a>
             </div>
 
             <div className="mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-hairline bg-card">
