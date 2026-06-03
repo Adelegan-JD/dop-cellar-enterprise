@@ -88,6 +88,23 @@ export function Products({
                   loading="lazy"
                   className="h-full w-full object-contain p-6 transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
                 />
+                {/* Anti-plagiarism watermark overlay — repeating brand wordmark */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-[0.18] select-none"
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(-30deg, transparent 0 60px, rgba(201,168,76,0.0) 60px 80px)",
+                  }}
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
+                >
+                  <span className="rotate-[-22deg] whitespace-nowrap font-display text-[clamp(1.1rem,2.2vw,1.6rem)] tracking-[0.25em] text-foreground/10">
+                    DOPCELLAR · MERIT · DOPCELLAR · MERIT
+                  </span>
+                </div>
                 <div className="absolute left-4 top-4 inline-flex items-center rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/90 backdrop-blur">
                   {p.category}
                 </div>
