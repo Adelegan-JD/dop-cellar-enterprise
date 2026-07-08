@@ -10,6 +10,7 @@ import {
   MessageSquare,
   Sun,
   Siren,
+  Camera,
 } from "lucide-react";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { fadeUp, staggerChildren } from "@/lib/motion";
@@ -33,6 +34,12 @@ const cards = [
     label: "Projects",
     description: "Selected case studies from banking, industrial and gov.",
     icon: Building2,
+  },
+  {
+    href: "/gallery",
+    label: "Work Gallery",
+    description: "Real photos & video from live DopCellar Merit installations.",
+    icon: Camera,
   },
   {
     href: "/industries",

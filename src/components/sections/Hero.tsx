@@ -1,27 +1,51 @@
+import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StatCounter } from "@/components/common/StatCounter";
 import { AnimatedBackdrop } from "@/components/common/AnimatedBackdrop";
-import { heroImage } from "@/config/content";
 import { kpis } from "@/config/content";
+import { galleryPhotos } from "@/config/gallery";
+
+const HERO_ROTATION = [
+  galleryPhotos[19], // team on-site
+  galleryPhotos[4],  // camera install
+  galleryPhotos[14], // inverter
+  galleryPhotos[9],  // monitoring rack
+].filter(Boolean);
 
 export function Hero() {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(
+      () => setIdx((i) => (i + 1) % HERO_ROTATION.length),
+      5500,
+    );
+    return () => clearInterval(id);
+  }, []);
+  const current = HERO_ROTATION[idx];
+
   return (
     <section className="relative isolate overflow-hidden pt-24">
       {/* Animated engineering backdrop */}
       <AnimatedBackdrop />
-      {/* Faint hero photo for depth */}
+      {/* Rotating fieldwork photo for depth */}
       <div className="absolute inset-0 -z-10">
-        <img
-          src={heroImage}
-          alt=""
-          aria-hidden
-          className="h-full w-full object-cover opacity-[0.18] mix-blend-luminosity"
-          width={1920}
-          height={1080}
-        />
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={current.src}
+            src={current.src}
+            alt=""
+            aria-hidden
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 0.22, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="h-full w-full object-cover mix-blend-luminosity"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 lg:pb-32 lg:pt-24">
