@@ -56,7 +56,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/60 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-muted-foreground backdrop-blur"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-          Engineering · Infrastructure · Industrial Technology
+          Integrated Infrastructure Engineering · Nigeria
         </motion.div>
 
         <motion.h1
@@ -65,8 +65,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 max-w-5xl font-display text-balance text-5xl leading-[1.02] text-foreground sm:text-6xl md:text-7xl lg:text-[5.25rem]"
         >
-          Building reliable engineering infrastructure across{" "}
-          <span className="text-gold">Nigeria</span>.
+          The infrastructure banks, industry and government{" "}
+          <span className="text-gold">rely on to stay operational</span>.
         </motion.h1>
 
         <motion.p
@@ -75,9 +75,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="mt-7 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg"
         >
-          Delivering electrical engineering, automation, construction, security
-          infrastructure, and industrial technology solutions with precision and
-          long-term reliability.
+          DopCellar Merit Global Limited engineers, deploys and maintains power,
+          security, network and building systems for Nigeria's most demanding
+          operators — under one accountable delivery contract.
         </motion.p>
 
         <motion.div
