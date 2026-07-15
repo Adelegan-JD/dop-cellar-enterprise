@@ -89,7 +89,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-hairline glass md:hidden">
+        <div className="border-t border-hairline bg-background/98 backdrop-blur-md supports-[backdrop-filter]:bg-background/95 md:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-6 py-4">
             {nav.map((item) => (
               <Link
