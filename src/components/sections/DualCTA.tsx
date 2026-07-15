@@ -1,6 +1,5 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, ClipboardCheck, PackageSearch } from "lucide-react";
-import { whatsappLink } from "@/config/site";
+import { site, whatsappLink } from "@/config/site";
 
 export function DualCTA() {
   return (
@@ -24,13 +23,15 @@ export function DualCTA() {
               by our senior engineers within one business week.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
+              <a
+                href={site.forms.solar}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-gold px-5 py-2.5 text-[13px] font-medium text-primary-foreground hover:bg-gold/90"
               >
                 Request assessment
                 <ArrowUpRight className="h-4 w-4" />
-              </Link>
+              </a>
               <a
                 href={whatsappLink(
                   "Hello DopCellar Merit — I'd like to book a project assessment.",
@@ -61,19 +62,25 @@ export function DualCTA() {
               CCTV, access control, alarm, and power catalog.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/products"
+              <a
+                href={site.forms.cctvAlarm}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-foreground px-5 py-2.5 text-[13px] font-medium text-background hover:bg-foreground/90"
               >
-                Browse catalog
+                Request quotation
                 <ArrowUpRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/contact"
+              </a>
+              <a
+                href={whatsappLink(
+                  "Hello DopCellar Merit — I'd like to speak with a product specialist.",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md border border-hairline bg-background/60 px-5 py-2.5 text-[13px] font-medium text-foreground hover:border-gold/40"
               >
-                Request quotation
-              </Link>
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
         </div>

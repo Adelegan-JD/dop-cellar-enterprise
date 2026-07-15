@@ -27,6 +27,13 @@ import cctv from "../assets/cctv.jpg";
 import construction from "../assets/construction.jpg";
 import industrial from "../assets/industrial.jpg";
 
+// Real fieldwork photos (CDN) — used to replace stock imagery in Projects
+import projBanking from "../assets/gallery-cdn/image12.jpg.asset.json";
+import projCctv from "../assets/gallery-cdn/image10.jpg.asset.json";
+import projElectrical from "../assets/gallery-cdn/image2.jpg.asset.json";
+import projSecurity from "../assets/gallery-cdn/image21.jpg.asset.json";
+import projNetwork from "../assets/gallery-cdn/image3.jpg.asset.json";
+
 import bulletCamera from "../assets/products/bullet-camera.jpg";
 import cameraRange from "../assets/products/camera-range.jpg";
 import cctvSystem from "../assets/products/cctv-system.jpg";
@@ -597,7 +604,7 @@ export const projects: Project[] = [
     category: "Financial Services",
     location: "Port Harcourt",
     year: "2024",
-    image: banking,
+    image: projBanking.url,
     summary:
       "Branch electrification, ATM lobby commissioning, and centralized monitoring across multi-site banking deployments.",
   },
@@ -607,7 +614,7 @@ export const projects: Project[] = [
     category: "Security Infrastructure",
     location: "Rivers State",
     year: "2024",
-    image: cctv,
+    image: projCctv.url,
     summary:
       "IP-based surveillance with NVR architecture and 24/7 control-room integration for a multi-facility operator.",
   },
@@ -617,7 +624,7 @@ export const projects: Project[] = [
     category: "Electrical Engineering",
     location: "Lagos",
     year: "2023",
-    image: industrial,
+    image: projElectrical.url,
     summary:
       "Switchgear, distribution, and load-balanced installations for a Grade-A commercial development.",
   },
@@ -627,7 +634,7 @@ export const projects: Project[] = [
     category: "Integrated Security",
     location: "Abuja",
     year: "2023",
-    image: construction,
+    image: projSecurity.url,
     summary:
       "Layered access control, intrusion detection, and perimeter surveillance unified through a single SOC.",
   },
@@ -637,7 +644,7 @@ export const projects: Project[] = [
     category: "Network Infrastructure",
     location: "Port Harcourt",
     year: "2024",
-    image: network,
+    image: projNetwork.url,
     summary:
       "Fiber backbone, structured cabling, and resilient core switching for a heavy-industry operations facility.",
   },
