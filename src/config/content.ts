@@ -27,6 +27,13 @@ import cctv from "../assets/cctv.jpg";
 import construction from "../assets/construction.jpg";
 import industrial from "../assets/industrial.jpg";
 
+// Real fieldwork photos (CDN) — used to replace stock imagery in Projects
+import projBanking from "../assets/gallery-cdn/image12.jpg.asset.json";
+import projCctv from "../assets/gallery-cdn/image10.jpg.asset.json";
+import projElectrical from "../assets/gallery-cdn/image2.jpg.asset.json";
+import projSecurity from "../assets/gallery-cdn/image21.jpg.asset.json";
+import projNetwork from "../assets/gallery-cdn/image3.jpg.asset.json";
+
 import bulletCamera from "../assets/products/bullet-camera.jpg";
 import cameraRange from "../assets/products/camera-range.jpg";
 import cctvSystem from "../assets/products/cctv-system.jpg";
