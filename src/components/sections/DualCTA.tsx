@@ -1,6 +1,5 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, ClipboardCheck, PackageSearch } from "lucide-react";
-import { whatsappLink } from "@/config/site";
+import { site, whatsappLink } from "@/config/site";
 
 export function DualCTA() {
   return (
