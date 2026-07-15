@@ -75,5 +75,9 @@ export const nav = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
+/**
+ * Uses the canonical wa.me deep link — works on desktop (opens web.whatsapp.com
+ * when no WhatsApp Desktop client is installed) and on mobile (opens the app).
+ */
 export const whatsappLink = (message = "Hello DopCellar Merit, I'd like to request a consultation.") =>
-  `https://api.whatsapp.com/send?phone=${site.contact.whatsapp}&text=${encodeURIComponent(message)}`;
+  `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(message)}`;
