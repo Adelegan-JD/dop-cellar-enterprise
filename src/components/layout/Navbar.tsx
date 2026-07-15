@@ -25,8 +25,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass border-b border-hairline"
-          : "border-b border-transparent"
+          ? "border-b border-hairline bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/85 shadow-[0_1px_0_0_var(--color-hairline)]"
+          : "border-b border-transparent bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 md:bg-transparent md:backdrop-blur-none"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:h-[72px]">
@@ -89,7 +89,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-hairline glass md:hidden">
+        <div className="border-t border-hairline bg-background/98 backdrop-blur-md supports-[backdrop-filter]:bg-background/95 md:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-6 py-4">
             {nav.map((item) => (
               <Link

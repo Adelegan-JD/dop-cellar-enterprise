@@ -64,11 +64,11 @@ export function SectorSolutions() {
                 className="group relative overflow-hidden rounded-xl border border-hairline bg-card p-7 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
               >
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                <div className="flex items-start justify-between">
-                  <div className="grid h-12 w-12 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">
+                <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">
                     <Icon className="h-5 w-5 text-gold" strokeWidth={1.6} />
                   </div>
-                  <span className="text-[11px] uppercase tracking-[0.16em] text-gold/80">
+                  <span className="text-[11px] uppercase tracking-[0.16em] text-gold/80 sm:max-w-[55%] sm:text-right">
                     {s.outcome}
                   </span>
                 </div>
