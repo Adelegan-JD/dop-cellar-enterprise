@@ -46,14 +46,8 @@ function HomePage() {
       <Hero />
       <TrustStrip />
       <SectorSolutions />
-      <SignaturePackages />
-      <HomeSections />
-      <WhyUs />
       <FeaturedWork />
-      <Outcomes />
-      <Testimonials />
       <DualCTA />
-      <About />
       <Contact />
     </>
   );
