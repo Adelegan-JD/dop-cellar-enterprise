@@ -66,11 +66,10 @@ export const site = {
 
 export const nav = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
+  { label: "Solutions", href: "/services" },
+  { label: "Industries", href: "/industries" },
   { label: "Projects", href: "/projects" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Industries", href: "/industries" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;

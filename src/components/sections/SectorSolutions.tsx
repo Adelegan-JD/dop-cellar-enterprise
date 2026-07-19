@@ -43,9 +43,9 @@ export function SectorSolutions() {
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="Sector Solutions"
+          eyebrow="Industries Served"
           title="Engineered for the sectors Nigeria cannot afford to have fail."
-          description="We build the physical and electronic infrastructure that banks, commercial operators, industrial plants, and public institutions rely on to stay operational."
+          description="Executives search by industry, not by product. Each sector below reflects a specific operational-continuity brief we've engineered against."
         />
 
         <motion.div

@@ -38,14 +38,15 @@ export function Hero() {
             src={current.src}
             alt=""
             aria-hidden
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 0.22, scale: 1 }}
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 0.38, scale: 1 }}
             exit={{ opacity: 0, scale: 1.02 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="h-full w-full object-cover mix-blend-luminosity"
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="h-full w-full object-cover"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/20" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 lg:pb-32 lg:pt-24">
@@ -56,7 +57,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/60 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-muted-foreground backdrop-blur"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-          Integrated Infrastructure Engineering · Nigeria
+          Integrated Smart Infrastructure · Nigeria
         </motion.div>
 
         <motion.h1
@@ -65,8 +66,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 max-w-5xl font-display text-balance text-5xl leading-[1.02] text-foreground sm:text-6xl md:text-7xl lg:text-[5.25rem]"
         >
-          The infrastructure banks, industry and government{" "}
-          <span className="text-gold">rely on to stay operational</span>.
+          Secure. Protect.{" "}
+          <span className="text-gold">Power.</span>
         </motion.h1>
 
         <motion.p
@@ -75,10 +76,12 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="mt-7 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg"
         >
-          DopCellar Merit Global Limited engineers, deploys and maintains power,
-          security, network and building systems for Nigeria's most demanding
-          operators — under one accountable delivery contract.
+          When your business cannot afford downtime, security failures, or
+          power interruptions, DopCellar engineers the integrated systems
+          that keep you running — across banking, industry, healthcare and
+          government.
         </motion.p>
+
 
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -88,7 +91,7 @@ export function Hero() {
         >
           <Button asChild size="lg" className="h-11 rounded-md bg-gold text-primary-foreground hover:bg-gold/90">
             <Link to="/contact">
-              Request Consultation
+              Request Site Assessment
               <ArrowUpRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
@@ -99,11 +102,22 @@ export function Hero() {
             className="h-11 rounded-md border-hairline bg-transparent text-foreground hover:bg-surface/60"
           >
             <Link to="/services">
-              Explore Services
+              Explore Solutions
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
         </motion.div>
+
+        {/* Industry trust bar */}
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] text-muted-foreground">
+          <span className="uppercase tracking-[0.16em] text-[10.5px] text-gold/80">Trusted engineering for</span>
+          <span>· Banking</span>
+          <span>· Healthcare</span>
+          <span>· Government</span>
+          <span>· Manufacturing</span>
+          <span>· Commercial Real Estate</span>
+        </div>
+
 
         {/* KPI strip */}
         <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline lg:grid-cols-4">

@@ -1,9 +1,9 @@
 import { ShieldCheck, Award, Wrench, MapPin } from "lucide-react";
 
 const badges = [
-  { icon: ShieldCheck, label: "CAC-registered · RC integrity" },
-  { icon: Award, label: "Vendor-certified engineers" },
-  { icon: Wrench, label: "SLA-backed maintenance" },
+  { icon: ShieldCheck, label: "Mission-critical delivery" },
+  { icon: Award, label: "Compliance-first engineering" },
+  { icon: Wrench, label: "SLA-backed lifecycle support" },
   { icon: MapPin, label: "Ibadan HQ · Port Harcourt branch" },
 ];
 
