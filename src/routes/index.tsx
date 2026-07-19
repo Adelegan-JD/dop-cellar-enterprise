@@ -1,15 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/Hero";
-import { TrustStrip } from "@/components/sections/TrustStrip";
+import { ProblemsSolved } from "@/components/sections/ProblemsSolved";
+import { WhyDopCellar } from "@/components/sections/WhyDopCellar";
 import { SectorSolutions } from "@/components/sections/SectorSolutions";
+import { HowWeWork } from "@/components/sections/HowWeWork";
 import { FeaturedWork } from "@/components/sections/FeaturedWork";
 import { DualCTA } from "@/components/sections/DualCTA";
 import { Contact } from "@/components/sections/Contact";
 
 const HOME_TITLE =
-  "DopCellar Merit — Engineering Infrastructure for Nigeria's Banks, Industry & Government";
+  "DopCellar Merit — Integrated Smart Infrastructure for Nigerian Enterprise";
 const HOME_DESCRIPTION =
-  "Enterprise-grade CCTV, solar & power, electrical, and network infrastructure across Nigeria. Trusted by banks, industrial operators, retail chains and government agencies. Offices in Ibadan & Port Harcourt.";
+  "Mission-critical security, power, fire safety and network infrastructure — engineered as one integrated platform for Nigeria's banks, industry, healthcare and government. Offices in Ibadan & Port Harcourt.";
 const HOME_URL = "https://dop-cellar-merit.lovable.app";
 const HOME_OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/ViWGlO78KHfM5zIUR6wLybuQIw03/social-images/social-1779261959696-cellar_2.webp";
@@ -23,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "CCTV installation Nigeria, solar installation Nigeria, electrical engineering Nigeria, banking infrastructure, access control Ibadan, security systems Port Harcourt, industrial power Nigeria, DopCellar Merit",
+          "integrated smart infrastructure Nigeria, mission critical security, business continuity power, CCTV installation Nigeria, solar hybrid Nigeria, fire alarm systems, access control Nigeria, DopCellar Merit, engineering firm Ibadan Port Harcourt",
       },
       { name: "geo.region", content: "NG" },
       { name: "geo.placename", content: "Ibadan, Port Harcourt" },
@@ -44,8 +46,10 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <TrustStrip />
+      <ProblemsSolved />
+      <WhyDopCellar />
       <SectorSolutions />
+      <HowWeWork />
       <FeaturedWork />
       <DualCTA />
       <Contact />
