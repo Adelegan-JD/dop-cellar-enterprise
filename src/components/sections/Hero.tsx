@@ -38,14 +38,15 @@ export function Hero() {
             src={current.src}
             alt=""
             aria-hidden
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 0.22, scale: 1 }}
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 0.38, scale: 1 }}
             exit={{ opacity: 0, scale: 1.02 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="h-full w-full object-cover mix-blend-luminosity"
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="h-full w-full object-cover"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/20" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 lg:pb-32 lg:pt-24">
