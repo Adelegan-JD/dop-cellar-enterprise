@@ -66,8 +66,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 max-w-5xl font-display text-balance text-5xl leading-[1.02] text-foreground sm:text-6xl md:text-7xl lg:text-[5.25rem]"
         >
-          Secure. Protect.{" "}
-          <span className="text-gold">Power.</span>
+          One engineered system.{" "}
+          <span className="text-gold">Every layer of your operation.</span>
         </motion.h1>
 
         <motion.p
@@ -76,11 +76,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="mt-7 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg"
         >
-          When your business cannot afford downtime, security failures, or
-          power interruptions, DopCellar engineers the integrated systems
-          that keep you running — across banking, industry, healthcare and
-          government.
+          DopCellar designs, installs and maintains the power, security, fire
+          and automation systems that keep Nigeria's most demanding businesses
+          running — as one integrated platform, not five disconnected vendors.
         </motion.p>
+
 
 
         <motion.div
