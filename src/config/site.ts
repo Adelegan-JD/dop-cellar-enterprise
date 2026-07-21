@@ -65,14 +65,15 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Home", href: "/" },
   { label: "Solutions", href: "/services" },
   { label: "Industries", href: "/industries" },
-  { label: "Projects", href: "/projects" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "Platform", href: "/platform" },
+  { label: "Work", href: "/projects" },
+  { label: "Knowledge", href: "/knowledge" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
+
 
 /**
  * Uses the canonical wa.me deep link — works on desktop (opens web.whatsapp.com
