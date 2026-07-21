@@ -101,8 +101,9 @@ export function Hero() {
             variant="outline"
             className="h-11 rounded-md border-hairline bg-transparent text-foreground hover:bg-surface/60"
           >
-            <Link to="/services">
-              Explore Solutions
+            <Link to="/platform">
+              Explore the Platform
+
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
