@@ -1,74 +1,193 @@
-# Catalog expansion + T=0 project knowledge
 
-## What you'll get
+# DopCellar — Website Rearchitecture (Structure & Content Only)
 
-1. **Logo-branded product images** — every catalog image gets a bottom-center strip carrying the DopCellar Merit logo + company name.
-2. **New products extracted from the 3 PDFs** (Alarm Kits, Access Controller Keypads/QR, Access Readers/Exit Button) — image + description only, no prices.
-3. **New "Power & Energy Solutions" category** with the 3 power-station photos you uploaded (EcoFlow 1kVA, 300W portable generator, EcoFlow River 300W).
-4. **Project knowledge captured at T=0** — both internal agent memory and a readable `PROJECT_OVERVIEW.md` in the repo.
+Positioning line (used across site):
+**"Integrated Smart Infrastructure — engineered as one system."**
 
-## Image pipeline
+Voice: calm, executive, engineering-grade. Outcomes before hardware. No product-lists on the homepage.
 
-For every new product image:
+---
 
-1. Extract from PDF (or use uploaded photo).
-2. Crop tightly to the product, white background.
-3. Composite a bottom-center branding strip:
+## 1. Global Information Architecture
 
-   ```text
-   ┌──────────────────────────────┐
-   │                              │
-   │        [ product ]           │
-   │                              │
-   ├──────────────────────────────┤
-   │  [logo]  DopCellar Merit     │  ← branding strip
-   └──────────────────────────────┘
-   ```
+Top-level navigation (7 anchors, no dropdown clutter):
 
-4. Save as `src/assets/products/<descriptive-slug>.jpg` (e.g. `alarm-kit-h5-wifi-gsm.jpg`, `power-station-ecoflow-1kva.jpg`).
-5. Register in `src/config/content.ts` → `products[]` with name, category, description, specs, use-cases.
+```
+Solutions   Industries   Platform   Work   Knowledge   About   Contact
+```
 
-**Naming convention:** `<category-prefix>-<model>-<variant>.jpg` — lowercase, hyphen-separated, no spaces.
+- **Solutions** → outcome-led service pillars (Power, Security, Fire, Automation, Electrical, Maintenance)
+- **Industries** → SME, Banking, Healthcare, Education, Hospitality, Manufacturing, Government, Commercial Real Estate
+- **Platform** → the "Integrated Infrastructure Platform" narrative (how the disciplines interlock)
+- **Work** → Projects + Gallery merged into one case-study hub
+- **Knowledge** → insights, guides, whitepapers, downloads
+- **About** → company, leadership, credentials, offices
+- **Contact** → assessment request + WhatsApp + branches
 
-## New product categories
+Persistent utilities: "Request Site Assessment" button (primary), WhatsApp FAB, phone number in header on desktop.
 
-- **Power & Energy Solutions** — 3 portable power stations (from your uploads).
-- **Intrusion & Alarms** — expanded with GSM/WiFi alarm kits from the Alarm Systems PDF (H5, H6, SA6PB/SA6PW, SA5P, SX1, SA6C, SA7M2B).
-- **Access Control** — expanded with keypads, QR readers, card readers, exit buttons from the two Access PDFs.
+Site map (routes):
 
-I will exclude all pricing, vendor (Sesame Access), and shipping info — only product name, image, and technical description.
+```
+/
+/solutions
+  /solutions/solar-energy
+  /solutions/cctv-surveillance
+  /solutions/fire-detection
+  /solutions/access-control
+  /solutions/electrical-engineering
+  /solutions/building-automation
+  /solutions/preventive-maintenance
+/industries
+  /industries/{sme|banking|healthcare|education|hospitality|manufacturing|government|commercial-real-estate}
+/platform          (Integrated Infrastructure Platform)
+/work              (case studies + gallery)
+  /work/{case-slug}
+/knowledge         (Knowledge Centre index)
+  /knowledge/{article-slug}
+/about
+/contact
+```
 
-## UI changes
+---
 
-- `Products.tsx` already supports category badges — no component changes needed.
-- Category filter chips added to `/products` page so visitors can filter by Surveillance / Access Control / Alarms / Power & Energy.
-- Home page still shows the first 6 (highlights mix from each category).
+## 2. Homepage Flow (11 sections)
 
-## Project knowledge (T=0)
+### 1) Hero
+- Eyebrow: "Integrated Smart Infrastructure · Nigeria"
+- H1: **"One engineered system. Every layer of your operation."**
+- Sub: "DopCellar designs, installs and maintains the power, security, fire and automation systems that keep Nigeria's most demanding businesses running — as one integrated platform, not five disconnected vendors."
+- Primary CTA: *Request Site Assessment* · Secondary: *Explore the Platform*
+- Visual: cinematic fieldwork photography, slow crossfade; muted navy overlay; thin gold hairline motif. No stock illustrations.
+- Micro-trust row beneath CTAs: "Trusted across Banking · Healthcare · Government · Manufacturing · Commercial Real Estate"
 
-**`mem://index.md`** — Core rules + memory references covering:
-- Company identity (name, phone, WhatsApp link format)
-- Brand: dark theme, gold accent, hairline borders, Apple-like minimal
-- Tech stack: TanStack Start, Vite, Tailwind, shadcn, no Cloud yet
-- Catalog system: products live in `src/config/content.ts`, images in `src/assets/products/`
-- Deployment: Vercel + Docker, CI via GitHub Actions, health endpoint at `/api/health`
-- Image rule: every catalog image must carry the bottom-center DopCellar Merit branding strip
+### 2) Business Problems We Solve
+Frame: "The five failures that quietly cost Nigerian businesses the most." Five outcome cards, each stated as a consequence-first pair (Problem → Consequence → Our resolution):
+1. **Power instability** → downtime, diesel drain → hybrid power engineered for continuity
+2. **Security exposure** → theft, disputed incidents → evidence-grade surveillance & access control
+3. **Fire hazards** → life-safety and insurance risk → certified detection & suppression
+4. **Operational downtime** → SLA breaches, revenue loss → preventive maintenance & rapid response
+5. **Fragmented systems** → five vendors, zero accountability → one integrated engineering partner
 
-**`PROJECT_OVERVIEW.md`** (repo root) — human-readable doc:
-- What the site is
-- Pages and what each does
-- How to add a new product (3-step guide pointing at `content.ts`)
-- How the image branding pipeline works (so you or another dev can re-run it on new images)
-- Deployment + environment refs (links to existing `DEPLOYMENT.md` / `ENVIRONMENT.md`)
+### 3) Why DopCellar
+Six pillars in a bordered grid (kept from current site, refined language):
+- One integrated ecosystem
+- Engineering-grade delivery
+- Lifecycle maintenance (SLA-backed)
+- Compliance-first (fire, electrical, security codes)
+- Nationwide presence (Ibadan HQ · Port Harcourt branch)
+- Rapid engineering-led response (not a call centre)
 
-## Technical notes
+### 4) Integrated Infrastructure Platform (new anchor section)
+The centrepiece — the story no competitor tells.
+- Left: short manifesto: "Most operators buy security, power and fire from different vendors. When something fails, no one owns the outcome. We built DopCellar as one platform so accountability, data and control live in one place."
+- Right: schematic diagram (conceptual, not literal) showing seven disciplines orbiting a central "Operations Continuity" core: Solar Energy · CCTV · Fire Detection · Access Control · Electrical · Building Automation · Preventive Maintenance. On hover, each node reveals a one-line role.
+- Sub-row: three proof points — *Unified design*, *Unified commissioning*, *Unified maintenance*.
 
-- Image compositing done in a Node script using `sharp` (already in lockfile transitively via Vite — will install if missing). One-shot script at `scripts/brand-product-image.mjs` so you can re-run it on future uploads.
-- Logo file expected at `src/assets/brand/logo.png` (from the `cellar3` upload you mentioned).
-- If the uploaded logo isn't found at build time, the script falls back to a text-only branding strip in brand gold so the build never breaks.
+### 5) Industries We Serve
+Eight-tile grid, each linking to its own industry page. Every tile carries an industry-specific outcome, not a product list:
+- SMEs — "Continuity for lean teams."
+- Banking — "Regulator-grade branch uptime."
+- Hospitals — "Zero-tolerance life-safety."
+- Schools — "Safe, monitored learning environments."
+- Hotels — "Guest-experience-grade reliability."
+- Manufacturing — "Measurable plant uptime."
+- Government — "Compliance and lifecycle accountability."
+- Commercial Buildings — "Tenant-ready on day one."
 
-## Out of scope (next time)
+### 6) Featured Solutions
+Three-to-four flagship engagements presented as executive case studies (not gallery thumbnails). Each card:
+- Client sector (anonymised where needed)
+- Challenge (one line)
+- Integrated systems deployed (2–4 tags)
+- Measured outcome (uptime %, response time, energy saved)
+- CTA: *Read the engagement*
+Below the grid: link to full *Work* hub.
 
-- Per-product detail pages with full spec sheets
-- Search / filtering beyond category chips
-- Online quote / cart flow (currently WhatsApp invoice request, unchanged)
+### 7) How We Work
+Four-step horizontal process, numbered, with a one-line deliverable under each:
+1. **Consultation & Site Assessment** — documented brief, risk map
+2. **Engineering Design** — single-line diagrams, BOQ, compliance pack
+3. **Installation & Commissioning** — traceable acceptance records
+4. **Preventive Maintenance & SLA** — quarterly reports, engineer-led response
+Right-rail: small callout — "Every project is delivered under one contract, one project manager, one accountability line."
+
+### 8) Knowledge Centre
+Three-card preview of the /knowledge hub — establishes authority, feeds SEO:
+- Guide: "Sizing a hybrid solar system for a Nigerian bank branch"
+- Whitepaper: "Fire compliance for commercial buildings — what auditors actually check"
+- Insight: "Why fragmented security systems fail during real incidents"
+CTA: *Visit the Knowledge Centre*
+
+### 9) FAQs
+Six executive-level questions (accordion), not consumer FAQs:
+1. Do you deliver as a single contractor across power, security and fire?
+2. What compliance standards do you engineer against?
+3. How do you handle sites outside Ibadan and Port Harcourt?
+4. What does your maintenance SLA cover?
+5. Can you integrate with our existing BMS / SOC / access system?
+6. How is a project scoped and priced?
+
+### 10) Consultation CTA
+Full-bleed dark band. Headline: **"Book a site assessment. Get an engineered answer, not a quote sheet."**
+- Primary: *Request Site Assessment* (form)
+- Secondary: *Talk to an engineer on WhatsApp*
+- Micro-line: "Response within one business day · Ibadan · Port Harcourt · Nationwide mobilisation"
+
+### 11) Footer
+Four columns: **Solutions · Industries · Company · Contact**. Legal row: registration, socials, © DopCellar Merit Global Limited. Two office blocks (HQ + branch) with map anchors.
+
+---
+
+## 3. Content Hierarchy Rules (apply site-wide)
+
+- Every page opens with an outcome statement, never a product name.
+- Hardware is only introduced after the problem and the discipline are established.
+- Every solution/industry page follows the same skeleton: *Outcome → Problem context → Our engineered response → Systems involved → Compliance & standards → Related case study → CTA*.
+- Numbers earn their place: uptime %, response time, sites maintained, engineers on staff. No decorative stats.
+- Imagery is real fieldwork only. No stock illustrations, no gradients-as-hero.
+
+---
+
+## 4. Solutions & Industries Page Templates
+
+**Solution page** (`/solutions/{slug}`):
+Hero (outcome + one line) → The problem in Nigerian context → Our engineered response → What's included (systems, not SKUs) → Compliance & standards → Related industries → Featured engagement → CTA.
+
+**Industry page** (`/industries/{slug}`):
+Hero (industry-specific outcome) → Operational risks unique to this sector → Integrated response (which disciplines apply) → Reference engagement → Compliance notes → CTA.
+
+---
+
+## 5. Knowledge Centre (new)
+
+Purpose: SEO authority + executive credibility. Three content types:
+- **Guides** — practical, sizing/spec oriented
+- **Whitepapers** — compliance, standards, lifecycle
+- **Insights** — short opinion pieces from the engineering team
+
+Index page: filter by type + industry. Article template: hero, TL;DR, body, downloadable PDF, author, related engagement, CTA.
+
+---
+
+## 6. Design Language (direction, not tokens)
+
+- **Palette**: deep navy base, generous white space on interior pages, single gold accent for emphasis, tech-blue for interactive states. Retire orange from primary surfaces; reserve for alerts only.
+- **Type**: display serif or high-contrast sans for H1/H2 (editorial feel), humanist sans for body. One weight per role.
+- **Layout**: 12-column, wide gutters, generous section padding (min 96px desktop). Hairline dividers, not boxes-inside-boxes.
+- **Motion**: slow, single-axis. Fade + 8–12px rise. No parallax gimmicks. Photo crossfades only on hero.
+- **Imagery**: real engineers, real sites, subtle navy grade overlay. Every image earns its place.
+
+---
+
+## 7. What Changes vs. Current Site
+
+Kept (refined): Hero rotation, Why DopCellar pillars, Sector grid, How We Work, Contact CTA, WhatsApp FAB.
+Added: Integrated Infrastructure Platform section, Knowledge Centre, executive FAQs, Solution + Industry sub-page templates, Work case-study hub.
+Removed from homepage: standalone Products section, generic testimonials strip, decorative stat blocks that don't tie to an outcome. Products become supporting evidence inside Solution pages, not a homepage destination.
+
+---
+
+## 8. Out of Scope for This Plan
+
+No code, no visual tokens, no component implementation. Implementation plan will follow once this architecture is approved.
