@@ -714,9 +714,30 @@ export const testimonials = [
   },
 ];
 
-export const kpis = [
-  { value: 120, suffix: "+", label: "Projects Delivered" },
-  { value: 15, suffix: "+", label: "Technical Experts" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 24, suffix: "/7", label: "Operational Support" },
+/**
+ * Verifiable operating commitments — no fabricated social proof.
+ * These are promises we control, not claims about past clients.
+ */
+export const commitments = [
+  {
+    value: "48h",
+    label: "Assessment turnaround",
+    note: "First contact to scheduled engineer visit.",
+  },
+  {
+    value: "7",
+    label: "Disciplines, one contract",
+    note: "Power, CCTV, fire, access, electrical, automation, maintenance.",
+  },
+  {
+    value: "0",
+    label: "Call-centre layers",
+    note: "Escalation reaches the engineer on your account.",
+  },
+  {
+    value: "SLA",
+    label: "Backed lifecycle support",
+    note: "Preventive schedules and response tiers, in writing.",
+  },
 ];
+

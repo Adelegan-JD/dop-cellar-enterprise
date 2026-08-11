@@ -39,7 +39,7 @@ export function SectorSolutions() {
   return (
     <section
       id="sectors"
-      className="relative border-t border-hairline bg-surface/40 py-24 md:py-32"
+      className="relative border-t border-hairline bg-surface/40 py-28 md:py-36"
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
@@ -53,7 +53,7 @@ export function SectorSolutions() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid gap-5 md:grid-cols-2"
+          className="mt-16 grid gap-5 md:grid-cols-2"
         >
           {sectors.map((s) => {
             const Icon = s.icon;
@@ -61,7 +61,7 @@ export function SectorSolutions() {
               <motion.div
                 key={s.title}
                 variants={fadeUp}
-                className="group relative overflow-hidden rounded-xl border border-hairline bg-card p-7 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-xl border border-hairline bg-card p-7 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[var(--shadow-elevated)]"
               >
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">

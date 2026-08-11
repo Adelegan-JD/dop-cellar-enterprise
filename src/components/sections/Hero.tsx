@@ -3,10 +3,10 @@ import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { StatCounter } from "@/components/common/StatCounter";
 import { AnimatedBackdrop } from "@/components/common/AnimatedBackdrop";
-import { kpis } from "@/config/content";
+import { commitments } from "@/config/content";
 import { galleryPhotos } from "@/config/gallery";
+
 
 const HERO_ROTATION = [
   galleryPhotos[19], // engineers on-site
@@ -111,9 +111,10 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 max-w-2xl text-pretty text-base leading-[1.65] text-muted-foreground md:text-lg"
         >
-          DopCellar designs, installs and maintains the power, security, fire
-          and automation systems that keep Nigeria's banks, hospitals, factories
-          and government facilities operational — every hour, every day.
+          We engineer the power, security, fire and automation layers that hold
+          a business together — so downtime, loss and life-safety risk stop
+          being your problem to manage. One assessment. One accountable
+          engineering partner. One system that keeps working.
         </motion.p>
 
         {/* CTAs */}
@@ -121,15 +122,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 flex flex-wrap items-center gap-3"
+          className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
         >
           <Button
             asChild
             size="lg"
-            className="h-12 rounded-md bg-gold px-6 text-[13.5px] font-medium text-primary-foreground shadow-[0_10px_30px_-12px_rgba(201,168,76,0.55)] hover:bg-gold/90"
+            className="h-12 rounded-md bg-gold px-6 text-[13.5px] font-medium text-primary-foreground shadow-[var(--shadow-gold)] transition-transform hover:bg-gold/90 hover:-translate-y-px"
           >
             <Link to="/contact">
-              Request Site Assessment
+              Book a free site assessment
               <ArrowUpRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
@@ -140,11 +141,15 @@ export function Hero() {
             className="h-12 rounded-md border-hairline bg-transparent px-6 text-[13.5px] font-medium text-foreground hover:bg-surface/60"
           >
             <Link to="/platform">
-              See the Platform
+              See how the platform works
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
+          <span className="text-[12px] text-muted-foreground sm:ml-2">
+            No cost. No obligation. Engineer-led, not sales-led.
+          </span>
         </motion.div>
+
 
         {/* Sector trust bar */}
         <motion.div
@@ -167,25 +172,29 @@ export function Hero() {
           <span>Commercial Real Estate</span>
         </motion.div>
 
-        {/* KPI strip */}
-        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline lg:grid-cols-4">
-          {kpis.map((k, i) => (
+        {/* Operating commitments — verifiable, never fabricated */}
+        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-hairline bg-hairline lg:mt-24 lg:grid-cols-4">
+          {commitments.map((c, i) => (
             <motion.div
-              key={k.label}
+              key={c.label}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.35 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-background/70 p-6 backdrop-blur"
+              className="bg-background/70 p-6 backdrop-blur md:p-7"
             >
-              <div className="font-display text-4xl font-semibold tracking-[-0.02em] text-foreground md:text-5xl">
-                <StatCounter value={k.value} suffix={k.suffix} />
+              <div className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-[2.5rem]">
+                {c.value}
               </div>
-              <div className="mt-2 text-[10.5px] uppercase tracking-[0.2em] text-muted-foreground">
-                {k.label}
+              <div className="mt-3 text-[10.5px] uppercase tracking-[0.2em] text-gold/90">
+                {c.label}
               </div>
+              <p className="mt-2 hidden text-[12.5px] leading-relaxed text-muted-foreground sm:block">
+                {c.note}
+              </p>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

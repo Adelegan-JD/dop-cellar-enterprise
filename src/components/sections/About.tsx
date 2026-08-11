@@ -4,7 +4,7 @@ import { site } from "@/config/site";
 
 export function About() {
   return (
-    <section id="about" className="relative border-t border-hairline py-24 md:py-32">
+    <section id="about" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-7">

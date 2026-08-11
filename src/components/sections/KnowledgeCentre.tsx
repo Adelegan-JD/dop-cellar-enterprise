@@ -35,7 +35,7 @@ export function KnowledgeCentre() {
   return (
     <section
       id="knowledge"
-      className="relative border-t border-hairline bg-surface/40 py-24 md:py-32"
+      className="relative border-t border-hairline bg-surface/40 py-28 md:py-36"
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
@@ -49,7 +49,7 @@ export function KnowledgeCentre() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid gap-5 md:grid-cols-3"
+          className="mt-16 grid gap-5 md:grid-cols-3"
         >
           {articles.map((a) => {
             const Icon = a.icon;
@@ -57,7 +57,7 @@ export function KnowledgeCentre() {
               <motion.article
                 key={a.title}
                 variants={fadeUp}
-                className="group flex flex-col rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+                className="group flex flex-col rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[var(--shadow-elevated)]"
               >
                 <div className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.18em] text-gold">
                   <Icon className="h-3.5 w-3.5" />

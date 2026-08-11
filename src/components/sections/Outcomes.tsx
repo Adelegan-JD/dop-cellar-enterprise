@@ -38,7 +38,7 @@ export function Outcomes() {
   return (
     <section
       id="outcomes"
-      className="relative border-t border-hairline py-24 md:py-32"
+      className="relative border-t border-hairline py-28 md:py-36"
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
@@ -52,7 +52,7 @@ export function Outcomes() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-16 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4"
         >
           {outcomes.map((o) => {
             const Icon = o.icon;

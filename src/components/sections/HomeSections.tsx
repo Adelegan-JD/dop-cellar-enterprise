@@ -84,7 +84,7 @@ export function HomeSections() {
               <motion.div key={c.href} variants={fadeUp}>
                 <Link
                   to={c.href}
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[var(--shadow-elevated)]"
                 >
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                   <div className="flex items-start justify-between">
@@ -111,7 +111,7 @@ export function HomeSections() {
             href={site.forms.solar}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+            className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[var(--shadow-elevated)]"
           >
             <div className="flex items-center gap-4">
               <div className="grid h-11 w-11 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">
@@ -132,7 +132,7 @@ export function HomeSections() {
             href={site.forms.cctvAlarm}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+            className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-xl border border-hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[var(--shadow-elevated)]"
           >
             <div className="flex items-center gap-4">
               <div className="grid h-11 w-11 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">

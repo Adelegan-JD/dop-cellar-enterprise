@@ -5,33 +5,41 @@ import { SectionHeader } from "@/components/common/SectionHeader";
 import { galleryPhotos } from "@/config/gallery";
 import { fadeUp, staggerChildren } from "@/lib/motion";
 
-const engagements = [
+/**
+ * Reference architectures — how we engineer for each environment.
+ * Deliberately no client names or claimed performance figures.
+ */
+const blueprints = [
   {
-    sector: "Banking",
-    challenge: "Branch continuity across ATM lobbies and back-office.",
-    systems: ["Hybrid Power", "CCTV", "Access Control"],
-    outcome: "99.6% branch uptime · sub-4h incident response.",
+    sector: "Banking & Financial Services",
+    challenge: "A branch that cannot afford a dark minute.",
+    systems: ["Solar-hybrid power", "Surveillance", "Access control"],
+    approach:
+      "Load-audited hybrid power with automatic changeover, evidence-grade camera coverage over cash points, and audited door control — designed so a grid failure never becomes a service failure.",
     image: galleryPhotos[11]?.src,
   },
   {
     sector: "Healthcare",
-    challenge: "Zero-tolerance life-safety across theatre and wards.",
-    systems: ["Fire Detection", "Emergency Power", "Surveillance"],
-    outcome: "Certified commissioning · 24/7 monitored coverage.",
+    challenge: "Life-safety systems with no tolerance for ambiguity.",
+    systems: ["Fire detection", "Emergency power", "Monitored coverage"],
+    approach:
+      "Zoned detection and alarm design, emergency supply for critical circuits, and a commissioning pack that gives clinical leadership documented proof that each zone was tested.",
     image: galleryPhotos[14]?.src,
   },
   {
     sector: "Commercial Real Estate",
-    challenge: "Tenant-ready building infrastructure from day one.",
-    systems: ["Electrical", "Structured Cabling", "BMS-ready"],
-    outcome: "Single integrated handover pack for landlord & tenants.",
+    challenge: "Buildings that must be tenant-ready on handover day.",
+    systems: ["Electrical backbone", "Structured cabling", "BMS-ready"],
+    approach:
+      "A single integrated electrical and cabling backbone with labelled, as-built documentation — so landlords hand tenants an infrastructure pack instead of a mystery.",
     image: galleryPhotos[2]?.src,
   },
   {
-    sector: "Manufacturing",
-    challenge: "Measurable plant uptime and perimeter security.",
-    systems: ["LV/MV Switchgear", "PTZ Surveillance", "Preventive Maintenance"],
-    outcome: "Documented PPM cycles · condition-based servicing.",
+    sector: "Manufacturing & Industry",
+    challenge: "Downtime measured in lost production, not inconvenience.",
+    systems: ["LV switchgear", "Perimeter surveillance", "Preventive maintenance"],
+    approach:
+      "Switchgear and distribution engineered around process criticality, perimeter coverage on the routes that actually matter, and a preventive schedule tied to plant run-hours.",
     image: galleryPhotos[20]?.src,
   },
 ];
@@ -40,13 +48,13 @@ export function FeaturedSolutions() {
   return (
     <section
       id="featured-solutions"
-      className="relative border-t border-hairline py-24 md:py-32"
+      className="relative border-t border-hairline bg-surface/40 py-28 md:py-36"
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="Featured Solutions"
-          title="Engineered engagements, not gallery thumbnails."
-          description="A working sample of integrated infrastructure programmes DopCellar has delivered across regulated Nigerian sectors."
+          eyebrow="Reference Architectures"
+          title="How we engineer for the environments that cannot stop."
+          description="These are our design blueprints — the engineering logic we apply per environment. Every one of them is discussed openly with your team before a single cable is pulled."
         />
 
         <motion.div
@@ -54,61 +62,63 @@ export function FeaturedSolutions() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid gap-5 md:grid-cols-2"
+          className="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8"
         >
-          {engagements.map((e) => (
+          {blueprints.map((b) => (
             <motion.article
-              key={e.sector}
+              key={b.sector}
               variants={fadeUp}
-              className="group overflow-hidden rounded-xl border border-hairline bg-card transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-hairline bg-card transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-elevated)]"
             >
-              {e.image && (
-                <div className="relative aspect-[16/9] overflow-hidden">
+              {b.image && (
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <img
-                    src={e.image}
-                    alt=""
+                    src={b.image}
+                    alt={`${b.sector} infrastructure engineering`}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
-                  <div className="absolute left-4 top-4 rounded-full border border-hairline bg-background/80 px-2.5 py-1 text-[10.5px] uppercase tracking-[0.16em] text-gold backdrop-blur">
-                    {e.sector}
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/25 to-transparent" />
+                  <div className="absolute left-5 top-5 rounded-full border border-hairline bg-background/85 px-3 py-1 text-[10.5px] uppercase tracking-[0.18em] text-gold backdrop-blur">
+                    {b.sector}
                   </div>
                 </div>
               )}
-              <div className="p-6">
-                <h3 className="font-display text-xl text-foreground">
-                  {e.challenge}
+              <div className="flex flex-1 flex-col p-7 md:p-8">
+                <h3 className="font-display text-[1.4rem] leading-snug tracking-[-0.01em] text-foreground">
+                  {b.challenge}
                 </h3>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {e.systems.map((s) => (
+                <p className="mt-4 text-[14px] leading-[1.7] text-muted-foreground">
+                  {b.approach}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-1.5">
+                  {b.systems.map((s) => (
                     <span
                       key={s}
-                      className="rounded-full border border-hairline bg-background/60 px-2.5 py-1 text-[11px] text-foreground/80"
+                      className="rounded-full border border-hairline bg-background/60 px-3 py-1 text-[11px] text-foreground/80"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
-                <div className="mt-5 border-t border-hairline pt-4">
-                  <div className="text-[10.5px] uppercase tracking-[0.16em] text-muted-foreground">
-                    Measured outcome
-                  </div>
-                  <div className="mt-1 text-[14px] text-foreground">
-                    {e.outcome}
-                  </div>
-                </div>
+                <Link
+                  to="/contact"
+                  className="mt-7 inline-flex items-center gap-2 border-t border-hairline pt-5 text-[13px] font-medium text-foreground transition-colors hover:text-gold"
+                >
+                  Discuss this for your facility
+                  <ArrowUpRight className="h-4 w-4 text-gold transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </Link>
               </div>
             </motion.article>
           ))}
         </motion.div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-14 flex justify-center">
           <Link
             to="/projects"
-            className="group inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-5 py-2.5 text-[13px] font-medium text-foreground transition-colors hover:bg-gold/20"
+            className="group inline-flex items-center gap-2 rounded-full border border-hairline bg-background/70 px-6 py-3 text-[13px] font-medium text-foreground transition-colors hover:border-gold/40"
           >
-            See the full body of work
+            See our field work
             <ArrowUpRight className="h-4 w-4 text-gold transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>

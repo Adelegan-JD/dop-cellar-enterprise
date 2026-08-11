@@ -76,7 +76,7 @@ export function SignaturePackages() {
   return (
     <section
       id="packages"
-      className="relative border-t border-hairline py-24 md:py-32"
+      className="relative border-t border-hairline py-28 md:py-36"
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
@@ -90,7 +90,7 @@ export function SignaturePackages() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+          className="mt-16 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
         >
           {packages.map((p) => {
             const Icon = p.icon;
@@ -98,7 +98,7 @@ export function SignaturePackages() {
               <motion.div
                 key={p.name}
                 variants={fadeUp}
-                className={`group relative flex flex-col overflow-hidden rounded-xl border p-7 transition-all hover:-translate-y-0.5 hover:shadow-lg ${
+                className={`group relative flex flex-col overflow-hidden rounded-xl border p-7 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-elevated)] ${
                   p.highlighted
                     ? "border-gold/50 bg-gradient-to-b from-gold/10 to-card"
                     : "border-hairline bg-card hover:border-gold/40"
