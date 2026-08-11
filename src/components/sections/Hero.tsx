@@ -3,10 +3,10 @@ import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { StatCounter } from "@/components/common/StatCounter";
 import { AnimatedBackdrop } from "@/components/common/AnimatedBackdrop";
-import { kpis } from "@/config/content";
+import { commitments } from "@/config/content";
 import { galleryPhotos } from "@/config/gallery";
+
 
 const HERO_ROTATION = [
   galleryPhotos[19], // engineers on-site
