@@ -52,7 +52,9 @@ function HomePage() {
       <Hero />
       <ProblemsSolved />
       <WhyDopCellar />
+      <TrustModel />
       <IntegratedPlatform />
+
       <IndustriesGrid />
       <FeaturedSolutions />
       <HowWeWork />
