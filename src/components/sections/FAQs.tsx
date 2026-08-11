@@ -1,9 +1,14 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 import { SectionHeader } from "@/components/common/SectionHeader";
 
 const faqs = [
+  {
+    q: "Why don't you show client logos or project statistics?",
+    a: "Because we will not publish credibility we have not earned. DopCellar Merit is a young integrated practice built by experienced field engineers, and we would rather you judge us on our engineering method, documentation and response commitments — all of which you can inspect before you engage us — than on numbers you cannot verify.",
+  },
   {
     q: "Do you deliver as a single contractor across power, security and fire?",
     a: "Yes. Every DopCellar engagement is delivered under one contract, one project manager and one accountability line — covering power, security, fire, network and building automation as one integrated scope.",
@@ -44,7 +49,7 @@ export function FAQs() {
           description="The questions operations leads, procurement teams and CFOs ask us before signing."
         />
 
-        <div className="mt-14 divide-y divide-hairline overflow-hidden rounded-xl border border-hairline bg-card">
+        <div className="mt-16 divide-y divide-hairline overflow-hidden rounded-2xl border border-hairline bg-card">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
@@ -52,7 +57,7 @@ export function FAQs() {
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-start justify-between gap-6 px-6 py-6 text-left transition-colors hover:bg-surface/40"
+                  className="flex w-full items-start justify-between gap-6 px-6 py-7 text-left md:px-8 transition-colors hover:bg-surface/40"
                   aria-expanded={isOpen}
                 >
                   <span className="font-display text-lg text-foreground md:text-xl">
@@ -73,7 +78,7 @@ export function FAQs() {
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 pb-6 text-[14.5px] leading-relaxed text-muted-foreground">
+                      <p className="px-6 pb-7 text-[14.5px] leading-[1.75] md:px-8 text-muted-foreground">
                         {f.a}
                       </p>
                     </motion.div>
@@ -83,6 +88,14 @@ export function FAQs() {
             );
           })}
         </div>
+
+        <p className="mt-12 text-center text-[14px] text-muted-foreground">
+          Still weighing it up?{" "}
+          <Link to="/contact" className="text-gold underline-offset-4 hover:underline">
+            Put the question to an engineer
+          </Link>{" "}
+          — no obligation attached.
+        </p>
       </div>
     </section>
   );
