@@ -109,13 +109,18 @@
   --border: oklch(0.22 0.06 260 / 10%);
   --input: oklch(0.22 0.06 260 / 14%);
   --ring: oklch(0.72 0.17 55 / 50%);
-  --surface: oklch(0.985 0.005 250);
+  --surface: oklch(0.965 0.008 250);           /* faint cool tint for banding */
   --surface-elevated: oklch(1 0 0);
-  --hairline: oklch(0.22 0.06 260 / 10%);
+  --hairline: oklch(0.22 0.06 260 / 9%);
   --gold: oklch(0.72 0.17 55);                 /* orange — semantic accent */
   --gold-soft: oklch(0.72 0.17 55 / 12%);
   --steel: oklch(0.55 0.13 260);               /* royal tech blue */
+
+  --shadow-soft: 0 1px 2px oklch(0.22 0.06 260 / 0.05), 0 10px 26px -18px oklch(0.22 0.06 260 / 0.18);
+  --shadow-elevated: 0 1px 2px oklch(0.22 0.06 260 / 0.06), 0 28px 60px -30px oklch(0.22 0.06 260 / 0.28);
+  --shadow-gold: 0 12px 32px -14px oklch(0.72 0.17 55 / 0.38);
 }
+
 
 @layer base {
   * { border-color: var(--color-border); }
