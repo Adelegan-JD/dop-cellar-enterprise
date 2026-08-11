@@ -23,17 +23,18 @@ export function SectionHeader({
         </Reveal>
       )}
       <Reveal delay={0.05}>
-        <h2 className="font-display text-balance text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-[3.25rem]">
+        <h2 className="font-display text-balance text-[clamp(2rem,4.2vw,3.1rem)] font-semibold leading-[1.06] tracking-[-0.025em] text-foreground">
           {title}
         </h2>
       </Reveal>
       {description && (
         <Reveal delay={0.1}>
-          <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-6 max-w-2xl text-pretty text-[15.5px] leading-[1.75] text-muted-foreground md:text-[17px]">
             {description}
           </p>
         </Reveal>
       )}
+
     </div>
   );
 }
