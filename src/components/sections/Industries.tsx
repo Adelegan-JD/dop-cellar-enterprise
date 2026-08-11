@@ -5,7 +5,7 @@ import { fadeUp, staggerChildren } from "@/lib/motion";
 
 export function Industries() {
   return (
-    <section id="industries" className="relative border-t border-hairline py-24 md:py-32">
+    <section id="industries" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Industries Served"
@@ -18,7 +18,7 @@ export function Industries() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {industries.map((i) => {
             const Icon = i.icon;

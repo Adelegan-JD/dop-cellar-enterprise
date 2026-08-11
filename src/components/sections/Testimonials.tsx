@@ -5,7 +5,7 @@ import { fadeUp, staggerChildren } from "@/lib/motion";
 
 export function Testimonials() {
   return (
-    <section className="relative border-t border-hairline py-24 md:py-32">
+    <section className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Voices from the Field"
@@ -17,7 +17,7 @@ export function Testimonials() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="mt-14 grid gap-6 md:grid-cols-2"
+          className="mt-16 grid gap-6 md:grid-cols-2"
         >
           {testimonials.map((t) => (
             <motion.figure

@@ -35,7 +35,7 @@ export function FAQs() {
   return (
     <section
       id="faqs"
-      className="relative border-t border-hairline py-24 md:py-32"
+      className="relative border-t border-hairline py-28 md:py-36"
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader

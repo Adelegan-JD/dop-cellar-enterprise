@@ -42,7 +42,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative border-t border-hairline bg-surface/40 py-24 md:py-32">
+    <section id="contact" className="relative border-t border-hairline bg-surface/40 py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Get in Touch"
@@ -50,7 +50,7 @@ export function Contact() {
           description="Share project specifics and we'll respond with a structured consultation pathway."
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-12">
+        <div className="mt-16 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="space-y-6">
               {site.offices.map((o) => (

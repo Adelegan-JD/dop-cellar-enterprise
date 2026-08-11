@@ -5,7 +5,7 @@ import { fadeUp, staggerChildren } from "@/lib/motion";
 
 export function Process() {
   return (
-    <section className="relative border-t border-hairline bg-surface/40 py-24 md:py-32">
+    <section className="relative border-t border-hairline bg-surface/40 py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Engineering Framework"
@@ -17,7 +17,7 @@ export function Process() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="mt-14 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3"
         >
           {process.map((p) => (
             <motion.li

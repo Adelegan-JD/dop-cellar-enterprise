@@ -26,7 +26,7 @@ export function Products({
   }, [active, limit]);
 
   return (
-    <section id="products" className="relative border-t border-hairline py-24 md:py-32">
+    <section id="products" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <SectionHeader
@@ -73,7 +73,7 @@ export function Products({
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {filtered.map((p) => (
             <motion.article

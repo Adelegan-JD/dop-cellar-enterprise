@@ -53,7 +53,7 @@ export function ProblemsSolved() {
   return (
     <section
       id="solutions"
-      className="relative border-t border-hairline bg-surface/40 py-24 md:py-32"
+      className="relative border-t border-hairline bg-surface/40 py-28 md:py-36"
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
@@ -67,7 +67,7 @@ export function ProblemsSolved() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
         >
           {problems.map((p) => {
             const Icon = p.icon;
@@ -75,7 +75,7 @@ export function ProblemsSolved() {
               <motion.div
                 key={p.outcome}
                 variants={fadeUp}
-                className="group relative overflow-hidden rounded-xl border border-hairline bg-card p-7 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-xl border border-hairline bg-card p-7 transition-all hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[var(--shadow-elevated)]"
               >
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="grid h-12 w-12 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">

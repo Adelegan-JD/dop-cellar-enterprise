@@ -25,7 +25,7 @@ export function IntegratedPlatform() {
   return (
     <section
       id="platform"
-      className="relative border-t border-hairline py-24 md:py-32"
+      className="relative border-t border-hairline py-28 md:py-36"
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center">
