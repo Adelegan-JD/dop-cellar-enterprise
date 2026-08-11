@@ -111,9 +111,11 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 max-w-2xl text-pretty text-base leading-[1.65] text-muted-foreground md:text-lg"
         >
-          DopCellar designs, installs and maintains the power, security, fire
-          and automation systems that keep Nigeria's banks, hospitals, factories
-          and government facilities operational — every hour, every day.
+          We engineer the power, security, fire and automation layers that hold
+          a business together — so downtime, loss and life-safety risk stop
+          being your problem to manage. One assessment. One accountable
+          engineering partner. One system that keeps working.
+
         </motion.p>
 
         {/* CTAs */}
