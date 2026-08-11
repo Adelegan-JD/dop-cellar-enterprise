@@ -167,25 +167,29 @@ export function Hero() {
           <span>Commercial Real Estate</span>
         </motion.div>
 
-        {/* KPI strip */}
-        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline lg:grid-cols-4">
-          {kpis.map((k, i) => (
+        {/* Operating commitments — verifiable, never fabricated */}
+        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-hairline bg-hairline lg:mt-24 lg:grid-cols-4">
+          {commitments.map((c, i) => (
             <motion.div
-              key={k.label}
+              key={c.label}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.35 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-background/70 p-6 backdrop-blur"
+              className="bg-background/70 p-6 backdrop-blur md:p-7"
             >
-              <div className="font-display text-4xl font-semibold tracking-[-0.02em] text-foreground md:text-5xl">
-                <StatCounter value={k.value} suffix={k.suffix} />
+              <div className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-[2.5rem]">
+                {c.value}
               </div>
-              <div className="mt-2 text-[10.5px] uppercase tracking-[0.2em] text-muted-foreground">
-                {k.label}
+              <div className="mt-3 text-[10.5px] uppercase tracking-[0.2em] text-gold/90">
+                {c.label}
               </div>
+              <p className="mt-2 hidden text-[12.5px] leading-relaxed text-muted-foreground sm:block">
+                {c.note}
+              </p>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
