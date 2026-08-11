@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemsSolved } from "@/components/sections/ProblemsSolved";
+import { TrustModel } from "@/components/sections/TrustModel";
+
 import { WhyDopCellar } from "@/components/sections/WhyDopCellar";
 import { IntegratedPlatform } from "@/components/sections/IntegratedPlatform";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
