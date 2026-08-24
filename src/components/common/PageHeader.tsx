@@ -30,6 +30,5 @@ export function PageHeader({
         {children}
       </div>
     </section>
-
   );
 }

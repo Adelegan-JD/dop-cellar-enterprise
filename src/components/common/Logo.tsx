@@ -10,11 +10,7 @@ export function Logo({
   className?: string;
 }) {
   return (
-    <Link
-      to="/"
-      aria-label={site.name}
-      className={`group flex items-center gap-2.5 ${className}`}
-    >
+    <Link to="/" aria-label={site.name} className={`group flex items-center gap-2.5 ${className}`}>
       <img
         src={logoSrc}
         alt={`${site.name} logo`}

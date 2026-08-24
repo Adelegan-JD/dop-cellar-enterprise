@@ -36,10 +36,7 @@ const outcomes = [
 
 export function Outcomes() {
   return (
-    <section
-      id="outcomes"
-      className="relative border-t border-hairline py-28 md:py-36"
-    >
+    <section id="outcomes" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Delivered Outcomes"
@@ -57,11 +54,7 @@ export function Outcomes() {
           {outcomes.map((o) => {
             const Icon = o.icon;
             return (
-              <motion.div
-                key={o.label}
-                variants={fadeUp}
-                className="relative bg-background p-7"
-              >
+              <motion.div key={o.label} variants={fadeUp} className="relative bg-background p-7">
                 <Icon className="h-5 w-5 text-gold" strokeWidth={1.6} />
                 <div className="mt-6 font-display text-5xl leading-none text-foreground">
                   {o.metric}
@@ -69,9 +62,7 @@ export function Outcomes() {
                 <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-gold/80">
                   {o.label}
                 </div>
-                <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
-                  {o.body}
-                </p>
+                <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">{o.body}</p>
                 <div className="mt-5 border-t border-hairline pt-3 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                   {o.sector}
                 </div>

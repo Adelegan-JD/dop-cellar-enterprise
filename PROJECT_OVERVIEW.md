@@ -16,16 +16,16 @@ industry, and government across Nigeria.
 
 ## Pages
 
-| Route          | Purpose |
-|----------------|---------|
-| `/`            | Home — hero, services, products (first 6), industries, projects, testimonials, contact |
-| `/about`       | Company story, capabilities, leadership |
-| `/services`    | Full service catalog (10 disciplines) |
-| `/products`    | Full product catalog with category filters |
-| `/industries`  | Sectors served |
-| `/projects`    | Reference projects |
-| `/contact`     | Contact form + WhatsApp / phone |
-| `/api/health`  | JSON liveness endpoint |
+| Route         | Purpose                                                                                |
+| ------------- | -------------------------------------------------------------------------------------- |
+| `/`           | Home — hero, services, products (first 6), industries, projects, testimonials, contact |
+| `/about`      | Company story, capabilities, leadership                                                |
+| `/services`   | Full service catalog (10 disciplines)                                                  |
+| `/products`   | Full product catalog with category filters                                             |
+| `/industries` | Sectors served                                                                         |
+| `/projects`   | Reference projects                                                                     |
+| `/contact`    | Contact form + WhatsApp / phone                                                        |
+| `/api/health` | JSON liveness endpoint                                                                 |
 
 ## Brand
 
@@ -50,6 +50,7 @@ Control, Intrusion & Alarms, Power & Energy.
    ```
 
    Or batch:
+
    ```bash
    node scripts/brand-product-image.mjs --batch <inDir> src/assets/products
    ```

@@ -34,9 +34,9 @@ export function ConsultationCTA() {
             Start with an assessment, not a quotation.
           </h2>
           <p className="mt-6 max-w-xl text-pretty text-base leading-[1.7] text-primary-foreground/75 md:text-lg">
-            A senior engineer walks your site, maps where continuity actually
-            breaks, and returns a documented pathway you can hand to your own
-            consultants. There is no cost and no commitment attached to it.
+            A senior engineer walks your site, maps where continuity actually breaks, and returns a
+            documented pathway you can hand to your own consultants. There is no cost and no
+            commitment attached to it.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -63,8 +63,7 @@ export function ConsultationCTA() {
           </div>
 
           <p className="mt-7 text-[12px] uppercase tracking-[0.18em] text-primary-foreground/55">
-            Reply within one business day · Ibadan · Port Harcourt · Nationwide
-            mobilisation
+            Reply within one business day · Ibadan · Port Harcourt · Nationwide mobilisation
           </p>
         </div>
 
@@ -78,9 +77,7 @@ export function ConsultationCTA() {
                 <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full border border-gold/40 font-mono text-[11px] text-gold">
                   {i + 1}
                 </span>
-                <p className="text-[14.5px] leading-[1.7] text-primary-foreground/85">
-                  {s}
-                </p>
+                <p className="text-[14.5px] leading-[1.7] text-primary-foreground/85">{s}</p>
               </li>
             ))}
           </ol>

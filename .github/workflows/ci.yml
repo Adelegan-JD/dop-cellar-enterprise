@@ -21,19 +21,6 @@ jobs:
         with:
           bun-version: latest
 
-      # The committed vite.config.ts is Lovable's Cloudflare-tuned config.
-      # For CI / Vercel / Docker builds we swap in vite.config.production.ts
-      # exactly as documented in DEPLOYMENT.md — but we do it non-destructively
-      # so the swap only exists inside the runner.
-      - name: Use production Vite config
-        run: |
-          if [ -f vite.config.production.ts ]; then
-            mv vite.config.ts vite.config.lovable.ts
-            mv vite.config.production.ts vite.config.ts
-          fi
-          # src/server.ts is a Cloudflare Worker entry — TanStack Start's own
-          # SSR entry handles requests on Node, so remove it for portable builds.
-          rm -f src/server.ts wrangler.jsonc
 
       - name: Install dependencies
         run: bun install --frozen-lockfile

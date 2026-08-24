@@ -114,9 +114,7 @@ async function main() {
   if (args[0] === "--batch") {
     const [, inDir, outDir] = args;
     await mkdir(outDir, { recursive: true });
-    const files = (await readdir(inDir)).filter((f) =>
-      /\.(jpe?g|png|webp)$/i.test(f),
-    );
+    const files = (await readdir(inDir)).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
     console.log(`Branding ${files.length} image(s) from ${inDir} → ${outDir}`);
     for (const f of files) {
       const name = f.replace(/\.(jpe?g|png|webp)$/i, ".jpg");

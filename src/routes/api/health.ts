@@ -16,7 +16,7 @@ export const Route = createFileRoute("/api/health")({
         new Response(
           JSON.stringify({
             status: "ok",
-            uptime: typeof process !== "undefined" ? process.uptime?.() ?? null : null,
+            uptime: typeof process !== "undefined" ? (process.uptime?.() ?? null) : null,
             timestamp: new Date().toISOString(),
           }),
           {

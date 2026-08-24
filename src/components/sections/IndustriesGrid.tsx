@@ -56,9 +56,7 @@ export function IndustriesGrid() {
                 <div className="grid h-11 w-11 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">
                   <Icon className="h-5 w-5 text-gold" strokeWidth={1.6} />
                 </div>
-                <h3 className="mt-5 font-display text-lg text-foreground">
-                  {s.name}
-                </h3>
+                <h3 className="mt-5 font-display text-lg text-foreground">{s.name}</h3>
                 <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
                   {s.outcome}
                 </p>

@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  FileSearch,
-  Clock,
-  Wrench,
-  Users,
-  ShieldCheck,
-  Compass,
-} from "lucide-react";
+import { FileSearch, Clock, Wrench, Users, ShieldCheck, Compass } from "lucide-react";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { fadeUp, staggerChildren } from "@/lib/motion";
 
@@ -45,10 +38,7 @@ const pillars = [
 
 export function TrustModel() {
   return (
-    <section
-      id="trust"
-      className="relative border-t border-hairline py-28 md:py-36"
-    >
+    <section id="trust" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="How We Earn Trust"
@@ -76,18 +66,15 @@ export function TrustModel() {
                 <h3 className="mt-6 font-display text-[1.3rem] leading-snug tracking-[-0.01em] text-foreground">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-[1.7] text-muted-foreground">
-                  {p.body}
-                </p>
+                <p className="mt-3 text-[14px] leading-[1.7] text-muted-foreground">{p.body}</p>
               </motion.div>
             );
           })}
         </motion.div>
 
         <p className="mx-auto mt-12 max-w-3xl text-center text-[14px] leading-[1.7] text-muted-foreground">
-          Ask us for a reference design, a commissioning checklist or a
-          maintenance schedule template before you engage us. Firms that hide
-          their method rarely have one.
+          Ask us for a reference design, a commissioning checklist or a maintenance schedule
+          template before you engage us. Firms that hide their method rarely have one.
         </p>
       </div>
     </section>

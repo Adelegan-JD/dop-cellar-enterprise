@@ -8,10 +8,10 @@ import { fadeUp, staggerChildren } from "@/lib/motion";
 // Curated preview — one from each discipline
 const featured = [
   galleryPhotos[19], // team on-site
-  galleryPhotos[4],  // camera install
+  galleryPhotos[4], // camera install
   galleryPhotos[14], // inverter
-  galleryPhotos[9],  // monitoring rack
-  galleryPhotos[2],  // rack build
+  galleryPhotos[9], // monitoring rack
+  galleryPhotos[2], // rack build
   galleryPhotos[15], // battery bank
   galleryPhotos[20], // perimeter camera
   galleryPhotos[11], // distribution board
@@ -19,10 +19,7 @@ const featured = [
 
 export function FeaturedWork() {
   return (
-    <section
-      id="featured-work"
-      className="relative border-t border-hairline py-20 md:py-28"
-    >
+    <section id="featured-work" className="relative border-t border-hairline py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="From the field"

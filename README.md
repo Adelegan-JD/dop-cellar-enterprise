@@ -1,4 +1,3 @@
-
 # DopCellar Merit Global Limited
 
 DopCellar Merit Global Limited is a Nigerian engineering and infrastructure company delivering electrical, security, automation, and industrial technology solutions for banks, commercial real estate, industry, and government sectors. This repository contains the company’s corporate website, built as a modern, responsive marketing site with a polished user experience.

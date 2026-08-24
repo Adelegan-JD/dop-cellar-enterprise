@@ -23,15 +23,9 @@ export function WhyUs() {
           {whyUs.map((item) => {
             const Icon = item.icon;
             return (
-              <motion.div
-                key={item.title}
-                variants={fadeUp}
-                className="bg-background p-6 lg:p-7"
-              >
+              <motion.div key={item.title} variants={fadeUp} className="bg-background p-6 lg:p-7">
                 <Icon className="h-5 w-5 text-gold" strokeWidth={1.6} />
-                <h3 className="mt-5 text-[14.5px] font-semibold text-foreground">
-                  {item.title}
-                </h3>
+                <h3 className="mt-5 text-[14.5px] font-semibold text-foreground">{item.title}</h3>
                 <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>

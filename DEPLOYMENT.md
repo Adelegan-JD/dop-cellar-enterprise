@@ -1,8 +1,27 @@
 # Deploying Dop Cellar Global Limited — Vercel & Docker
 
-This project was scaffolded inside Lovable, where the in-editor preview runs on a
-Cloudflare-Workers-tuned configuration. The application code (React 19, TanStack
-Router, Tailwind v4, Framer Motion) is fully portable, but the build target is not.
+# DopCellar Deployment Guide
+
+This document describes how to build and deploy the DopCellar corporate website.
+
+## Stack
+
+- React
+- TanStack Start
+- TanStack Router
+- Vite
+- Tailwind CSS
+- TypeScript
+- Node.js
+- Vercel
+- Docker
+
+## Local development
+
+```bash
+bun install
+bun run dev
+```
 
 Follow this guide once, after exporting the repo to GitHub and pulling it into VS Code.
 
@@ -93,6 +112,7 @@ Both Vercel and Node Docker support TanStack Start's full backend toolbox:
 - **Database** — Postgres via Supabase, Neon, or a managed Postgres next to your Docker container.
 
 Two rules to keep deployment portable as you grow:
+
 1. **Never use `process.env.X` at module scope** — read env vars inside the handler body. Vite bundles modules at build time and `process.env` is only defined at runtime.
 2. **Avoid Node-only native modules** in server functions (`sharp`, `puppeteer`, `child_process`) unless you've confirmed they work in the target runtime. Prefer HTTP API calls.
 

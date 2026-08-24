@@ -17,8 +17,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 // Pick the SSR preset based on where you're deploying.
 //   - "vercel"      → Vercel (auto-detected, also fine as default)
 //   - "node-server" → Docker / any Node host (emits .output/server/index.mjs)
-const preset =
-  process.env.VERCEL ? "vercel" : (process.env.NITRO_PRESET ?? "node-server");
+const preset = process.env.VERCEL ? "vercel" : (process.env.NITRO_PRESET ?? "node-server");
 
 export default defineConfig({
   plugins: [

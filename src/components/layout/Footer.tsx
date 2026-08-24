@@ -94,7 +94,9 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-hairline pt-6 text-[11px] uppercase tracking-[0.16em] text-muted-foreground sm:flex-row sm:items-center">
-          <div>© {new Date().getFullYear()} {site.legalName}. All rights reserved.</div>
+          <div>
+            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+          </div>
           <div className="flex gap-5">
             <span>Privacy</span>
             <span>Terms</span>

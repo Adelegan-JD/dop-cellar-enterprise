@@ -217,7 +217,7 @@ export const products: Product[] = [
     shortDescription:
       "4.3-inch touchscreen WiFi + GSM alarm panel with PIR detector, door sensor, siren and remote controllers.",
     specifications: [
-      "4.3\" TFT colour touch screen",
+      '4.3" TFT colour touch screen',
       "WiFi + 2G GSM (4G variant available)",
       "iOS & Android app, SMS push alerts",
       "Door-bell / Ready-To-Arm modes",
@@ -249,7 +249,7 @@ export const products: Product[] = [
     shortDescription:
       "WiFi + 2G alarm with 4.3-inch touch panel, voice message recording, and RFID tag support.",
     specifications: [
-      "4.3\" TFT colour touch screen",
+      '4.3" TFT colour touch screen',
       "WiFi + 2G GSM (WiFi + 4G variant available)",
       "Up to 100 remotes / detectors / RFID tags",
       "20-second voice message",
@@ -422,8 +422,6 @@ export const products: Product[] = [
   },
 ];
 
-
-
 export interface Service {
   slug: string;
   title: string;
@@ -513,32 +511,38 @@ export interface Industry {
 export const industries: Industry[] = [
   {
     title: "Banking",
-    description: "Branch infrastructure, ATM environments, and secure operational continuity for financial institutions.",
+    description:
+      "Branch infrastructure, ATM environments, and secure operational continuity for financial institutions.",
     icon: Landmark,
   },
   {
     title: "Commercial Real Estate",
-    description: "Building services engineering and facility infrastructure for offices, retail, and mixed-use developments.",
+    description:
+      "Building services engineering and facility infrastructure for offices, retail, and mixed-use developments.",
     icon: Building,
   },
   {
     title: "Industrial Operations",
-    description: "Process facility electrification, plant maintenance, and asset reliability programs.",
+    description:
+      "Process facility electrification, plant maintenance, and asset reliability programs.",
     icon: Factory,
   },
   {
     title: "Government Infrastructure",
-    description: "Public-sector engineering delivery aligned to compliance, accountability, and lifecycle standards.",
+    description:
+      "Public-sector engineering delivery aligned to compliance, accountability, and lifecycle standards.",
     icon: Briefcase,
   },
   {
     title: "Residential Developments",
-    description: "Power, security, and connectivity systems for estates and high-density residential schemes.",
+    description:
+      "Power, security, and connectivity systems for estates and high-density residential schemes.",
     icon: Home,
   },
   {
     title: "Corporate Facilities",
-    description: "Headquarters fit-outs, data and network rooms, and integrated workplace technology.",
+    description:
+      "Headquarters fit-outs, data and network rooms, and integrated workplace technology.",
     icon: Server,
   },
 ];
@@ -552,22 +556,26 @@ export interface WhyUsItem {
 export const whyUs: WhyUsItem[] = [
   {
     title: "Certified Professionals",
-    description: "Multi-disciplinary engineers and technicians with vendor and regulatory accreditation.",
+    description:
+      "Multi-disciplinary engineers and technicians with vendor and regulatory accreditation.",
     icon: ShieldCheck,
   },
   {
     title: "Scalable Deployment",
-    description: "Standardized delivery playbooks that scale from a single branch to nationwide rollouts.",
+    description:
+      "Standardized delivery playbooks that scale from a single branch to nationwide rollouts.",
     icon: Network,
   },
   {
     title: "Engineering Precision",
-    description: "Design-led execution with documented tolerances, test protocols, and acceptance criteria.",
+    description:
+      "Design-led execution with documented tolerances, test protocols, and acceptance criteria.",
     icon: GaugeCircle,
   },
   {
     title: "Rapid Execution",
-    description: "Pre-mobilized teams and supply chains that compress time-to-commissioning on critical projects.",
+    description:
+      "Pre-mobilized teams and supply chains that compress time-to-commissioning on critical projects.",
     icon: Truck,
   },
   {
@@ -577,12 +585,14 @@ export const whyUs: WhyUsItem[] = [
   },
   {
     title: "Operational Reliability",
-    description: "Redundancy-first system design built for uptime, continuity, and graceful degradation.",
+    description:
+      "Redundancy-first system design built for uptime, continuity, and graceful degradation.",
     icon: Activity,
   },
   {
     title: "Quality Assurance",
-    description: "Independent QA workflows, factory-acceptance testing, and structured commissioning sign-off.",
+    description:
+      "Independent QA workflows, factory-acceptance testing, and structured commissioning sign-off.",
     icon: ShieldCheck,
   },
 ];
@@ -654,12 +664,14 @@ export const process = [
   {
     step: "01",
     title: "Consultation",
-    description: "Stakeholder engagement to define objectives, constraints, and operational outcomes.",
+    description:
+      "Stakeholder engagement to define objectives, constraints, and operational outcomes.",
   },
   {
     step: "02",
     title: "Technical Assessment",
-    description: "Site survey, load analysis, and risk profiling to baseline existing infrastructure.",
+    description:
+      "Site survey, load analysis, and risk profiling to baseline existing infrastructure.",
   },
   {
     step: "03",
@@ -740,4 +752,3 @@ export const commitments = [
     note: "Preventive schedules and response tiers, in writing.",
   },
 ];
-

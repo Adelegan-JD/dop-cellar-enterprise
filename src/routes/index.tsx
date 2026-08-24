@@ -12,11 +12,10 @@ import { KnowledgeCentre } from "@/components/sections/KnowledgeCentre";
 import { FAQs } from "@/components/sections/FAQs";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 
-const HOME_TITLE =
-  "DopCellar Merit — Integrated Smart Infrastructure for Nigerian Enterprise";
+const HOME_TITLE = "DopCellar Merit — Integrated Smart Infrastructure for Nigerian Enterprise";
 const HOME_DESCRIPTION =
   "One engineered platform for power, security, fire, access, electrical, automation and maintenance — delivered under one accountability line for Nigeria's banks, hospitals, factories and government.";
-const HOME_URL = "https://dop-cellar-merit.lovable.app";
+const HOME_URL = import.meta.env.VITE_SITE_URL ?? "https://www.dopcellarmerit.com.ng";
 const HOME_OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/ViWGlO78KHfM5zIUR6wLybuQIw03/social-images/social-1779261959696-cellar_2.webp";
 

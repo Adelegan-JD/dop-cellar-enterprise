@@ -7,12 +7,11 @@ import { AnimatedBackdrop } from "@/components/common/AnimatedBackdrop";
 import { commitments } from "@/config/content";
 import { galleryPhotos } from "@/config/gallery";
 
-
 const HERO_ROTATION = [
   galleryPhotos[19], // engineers on-site
-  galleryPhotos[4],  // camera install
+  galleryPhotos[4], // camera install
   galleryPhotos[14], // inverter rack
-  galleryPhotos[9],  // monitoring
+  galleryPhotos[9], // monitoring
 ].filter(Boolean);
 
 const HEADLINE_WORDS = ["Your", "operations", "never", "stop."];
@@ -21,10 +20,7 @@ const HEADLINE_ACCENT = ["Neither", "do", "we."];
 export function Hero() {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
-    const id = setInterval(
-      () => setIdx((i) => (i + 1) % HERO_ROTATION.length),
-      6500,
-    );
+    const id = setInterval(() => setIdx((i) => (i + 1) % HERO_ROTATION.length), 6500);
     return () => clearInterval(id);
   }, []);
   const current = HERO_ROTATION[idx];
@@ -111,10 +107,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 max-w-2xl text-pretty text-base leading-[1.65] text-muted-foreground md:text-lg"
         >
-          We engineer the power, security, fire and automation layers that hold
-          a business together — so downtime, loss and life-safety risk stop
-          being your problem to manage. One assessment. One accountable
-          engineering partner. One system that keeps working.
+          We engineer the power, security, fire and automation layers that hold a business together
+          — so downtime, loss and life-safety risk stop being your problem to manage. One
+          assessment. One accountable engineering partner. One system that keeps working.
         </motion.p>
 
         {/* CTAs */}
@@ -149,7 +144,6 @@ export function Hero() {
             No cost. No obligation. Engineer-led, not sales-led.
           </span>
         </motion.div>
-
 
         {/* Sector trust bar */}
         <motion.div
@@ -194,7 +188,6 @@ export function Hero() {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

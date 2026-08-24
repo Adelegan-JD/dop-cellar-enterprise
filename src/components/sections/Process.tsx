@@ -20,11 +20,7 @@ export function Process() {
           className="mt-16 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3"
         >
           {process.map((p) => (
-            <motion.li
-              key={p.step}
-              variants={fadeUp}
-              className="relative bg-background p-7"
-            >
+            <motion.li key={p.step} variants={fadeUp} className="relative bg-background p-7">
               <div className="font-mono text-[11px] tracking-[0.2em] text-gold">{p.step}</div>
               <h3 className="mt-3 font-display text-2xl text-foreground">{p.title}</h3>
               <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">

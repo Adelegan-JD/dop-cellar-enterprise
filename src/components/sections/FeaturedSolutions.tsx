@@ -88,9 +88,7 @@ export function FeaturedSolutions() {
                 <h3 className="font-display text-[1.4rem] leading-snug tracking-[-0.01em] text-foreground">
                   {b.challenge}
                 </h3>
-                <p className="mt-4 text-[14px] leading-[1.7] text-muted-foreground">
-                  {b.approach}
-                </p>
+                <p className="mt-4 text-[14px] leading-[1.7] text-muted-foreground">{b.approach}</p>
                 <div className="mt-6 flex flex-wrap gap-1.5">
                   {b.systems.map((s) => (
                     <span
