@@ -22,8 +22,7 @@ export const Route = createFileRoute("/gallery")({
       { property: "og:title", content: "Work Gallery — DopCellar Merit" },
       {
         property: "og:description",
-        content:
-          "Photos and videos from live DopCellar Merit installations across Nigeria.",
+        content: "Photos and videos from live DopCellar Merit installations across Nigeria.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -39,17 +38,11 @@ function GalleryPage() {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   const photos = useMemo(
-    () =>
-      filter === "All"
-        ? galleryPhotos
-        : galleryPhotos.filter((p) => p.category === filter),
+    () => (filter === "All" ? galleryPhotos : galleryPhotos.filter((p) => p.category === filter)),
     [filter],
   );
   const videos = useMemo(
-    () =>
-      filter === "All"
-        ? galleryVideos
-        : galleryVideos.filter((v) => v.category === filter),
+    () => (filter === "All" ? galleryVideos : galleryVideos.filter((v) => v.category === filter)),
     [filter],
   );
 
@@ -115,9 +108,7 @@ function GalleryPage() {
           {videos.length > 0 && (
             <div className="mt-16">
               <div className="mb-6 flex items-end justify-between">
-                <h2 className="font-display text-3xl text-foreground">
-                  From the field — video
-                </h2>
+                <h2 className="font-display text-3xl text-foreground">From the field — video</h2>
                 <div className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                   {videos.length} clip{videos.length === 1 ? "" : "s"}
                 </div>
@@ -136,9 +127,7 @@ function GalleryPage() {
                       className="aspect-video w-full bg-black object-cover"
                     />
                     <figcaption className="flex items-center justify-between gap-3 px-4 py-3">
-                      <span className="text-[13px] text-foreground">
-                        {v.caption}
-                      </span>
+                      <span className="text-[13px] text-foreground">{v.caption}</span>
                       <span className="text-[10px] uppercase tracking-[0.14em] text-gold">
                         {v.category}
                       </span>

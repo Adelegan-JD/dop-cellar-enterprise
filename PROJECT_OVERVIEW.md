@@ -1,122 +1,92 @@
-# DopCellar Merit Global Limited — Project Overview
+# DopCellar Merit Global Limited: Project Overview
 
-This is the corporate website for **DopCellar Merit Global Limited** — security,
-electrical, and infrastructure engineering serving banks, commercial real estate,
-industry, and government across Nigeria.
+This repository contains the corporate website for **DopCellar Merit Global
+Limited**, a Nigerian security, electrical, automation, and infrastructure
+engineering company serving banks, commercial real estate, industry, and
+government.
 
-## Tech stack
+## Stack and architecture
 
-- **Framework**: TanStack Start (React 19 + Vite 7)
-- **Styling**: Tailwind CSS v4 via `src/styles.css`, semantic design tokens (dark theme, gold accent)
-- **Components**: shadcn/ui in `src/components/ui/`
-- **Routing**: File-based in `src/routes/` (auto-generated `routeTree.gen.ts` — never edit)
-- **Deployment**: Vercel + Docker (see `DEPLOYMENT.md`, `ENVIRONMENT.md`)
-- **CI/CD**: GitHub Actions (`.github/workflows/`) — build verification + Vercel preview deploys
-- **Health**: `/api/health` endpoint for Docker/Kubernetes liveness probes
+- **Application**: TanStack Start with React 19 and TanStack Router
+- **Build**: Vite 7 with the Nitro Vite plugin
+- **Styling**: Tailwind CSS v4 and the design tokens in `src/styles.css`
+- **Components**: React components and shadcn/ui primitives in `src/components/`
+- **Routing**: File-based routes in `src/routes/`; `src/routeTree.gen.ts` is generated
+  and must not be edited manually
+- **Production targets**: Vercel Functions through Nitro, or a Node.js server in Docker
+- **Quality checks**: GitHub Actions runs the Bun install and production build
+- **Health check**: `/api/health` returns JSON for liveness monitoring
 
-## Pages
+The active Vite configuration is `vite.config.ts`. It selects Nitro's `vercel`
+preset on Vercel and `node-server` for local production builds and Docker. No
+Cloudflare Worker entry point or Wrangler configuration is used.
 
-| Route          | Purpose |
-|----------------|---------|
-| `/`            | Home — hero, services, products (first 6), industries, projects, testimonials, contact |
-| `/about`       | Company story, capabilities, leadership |
-| `/services`    | Full service catalog (10 disciplines) |
-| `/products`    | Full product catalog with category filters |
-| `/industries`  | Sectors served |
-| `/projects`    | Reference projects |
-| `/contact`     | Contact form + WhatsApp / phone |
-| `/api/health`  | JSON liveness endpoint |
+## Routes
 
-## Brand
+| Route         | Purpose                                                                   |
+| ------------- | ------------------------------------------------------------------------- |
+| `/`           | Home page with services, products, industries, projects, and contact CTAs |
+| `/about`      | Company story, capabilities, and leadership                               |
+| `/services`   | Full service catalog                                                      |
+| `/products`   | Product catalog with category filters                                     |
+| `/industries` | Sectors served                                                            |
+| `/projects`   | Reference projects                                                        |
+| `/contact`    | Contact details and inquiry flow                                          |
+| `/api/health` | JSON liveness endpoint                                                    |
+
+## Brand and contact details
 
 - Company: **DopCellar Merit Global Limited**
-- Phone: **+234 909 811 1974**
-- WhatsApp link format: `https://api.whatsapp.com/send?phone=2349098111974&text=…`
-- All identity centralised in `src/config/site.ts`
+- Phone: **+234 8023266785**
+- WhatsApp links are centralised in `src/config/site.ts`
+- Site-wide identity and navigation are centralised in `src/config/site.ts`
 
 ## Product catalog
 
-Source of truth: `src/config/content.ts` → `products[]`. Categories currently in
-use: CCTV & Surveillance, Surveillance Kits, Surveillance Components, Access
-Control, Intrusion & Alarms, Power & Energy.
+The source of truth is `products[]` in `src/config/content.ts`. Current
+categories include CCTV & Surveillance, Surveillance Kits, Surveillance
+Components, Access Control, Intrusion & Alarms, and Power & Energy.
 
-### Add a new product (3 steps)
+To add a product:
 
-1. **Brand the image**
+1. Brand its image:
 
    ```bash
-   node scripts/brand-product-image.mjs <raw-image.jpg> \
-        src/assets/products/<slug>.jpg
+   node scripts/brand-product-image.mjs <raw-image.jpg> src/assets/products/<slug>.jpg
    ```
 
-   Or batch:
-   ```bash
-   node scripts/brand-product-image.mjs --batch <inDir> src/assets/products
-   ```
+   Use `--batch <input-directory> src/assets/products` for multiple images.
 
-   This wraps the image on a 1200×1200 white canvas and adds the dark
-   **DopCellar Merit Global Limited** branding strip across the bottom.
+2. Import the image and add a product object to `src/config/content.ts`.
+3. Use a lowercase, hyphenated filename such as
+   `access-keypad-metal-rfid.jpg`.
 
-2. **Import + register** in `src/config/content.ts`:
+The branding script uses `src/assets/brand/logo.png` when it is available and
+falls back to a typographic branding strip when it is not. Product images are
+placed on a 1200 x 1200 canvas.
 
-   ```ts
-   import myProduct from "../assets/products/<slug>.jpg";
-   // …
-   {
-     slug: "my-product",
-     name: "My Product",
-     category: "CCTV & Surveillance",   // must match an existing category
-     image: myProduct,
-     shortDescription: "…",
-     specifications: ["…", "…"],
-     useCases: ["…"],
-   }
-   ```
+Product descriptions are white-labelled for DopCellar Merit. Do not add vendor
+names, pricing, or shipping terms unless the product content specifically
+requires a model name.
 
-3. **Done.** Home page picks up the first 6 automatically; `/products` shows
-   all with category filter chips.
+Product inquiry buttons open WhatsApp with a pre-filled product request. There
+is currently no quote database or online ordering system.
 
-### Logo file (for branding strip)
+## Deployment and development
 
-Drop your final logo PNG at `src/assets/brand/logo.png`. The branding script
-auto-detects it and composites it left of the text. If absent, a clean
-typographic-only strip is used — the build never breaks.
+Run locally with:
 
-### Naming convention
+```bash
+bun install
+bun run dev
+```
 
-`<category-prefix>-<model>-<variant>.jpg` — lowercase, hyphens, no spaces.
-Examples: `alarm-kit-h5-wifi-gsm.jpg`, `power-station-ecoflow-1kva.jpg`,
-`access-keypad-metal-rfid.jpg`.
+See `DEPLOYMENT.md` for Vercel and Docker instructions, and `ENVIRONMENT.md`
+for environment-variable handling.
 
-## Catalog policy
+## Planned work
 
-Do **not** include vendor names (Sesame Access, OEM brands beyond model names
-the customer expects, e.g. EcoFlow), pricing, or shipping terms in product
-descriptions. The catalog is white-labelled as DopCellar Merit's own offering.
-
-## Customer quote flow
-
-Each product card has a **Request invoice** button that opens WhatsApp with a
-pre-filled message containing the product name. No backend, no forms — direct
-to sales WhatsApp. Will be replaced with proper quote system when Lovable
-Cloud / database is added.
-
-## Deployment
-
-- **Vercel** — auto-deploys on push to main. PRs get a preview deploy via
-  `.github/workflows/vercel-preview.yml` (requires `VERCEL_TOKEN`,
-  `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` repo secrets).
-- **Docker** — `Dockerfile` builds the production bundle and ships with a
-  `HEALTHCHECK` against `/api/health`.
-- **CI** — `.github/workflows/ci.yml` runs `bun install` + `bun run build` on
-  every push/PR.
-
-See `DEPLOYMENT.md` and `ENVIRONMENT.md` for env var setup and platform-specific
-guidance.
-
-## Future / not yet built
-
-- Per-product detail pages with full spec sheets
-- Quote cart / online ordering
-- Lovable Cloud backend (auth, leads database, admin CMS)
+- Per-product detail pages and complete specification sheets
+- Quote cart or online ordering
+- Persistent lead and quote management
 - Search beyond category filters

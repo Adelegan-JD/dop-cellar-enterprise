@@ -64,12 +64,8 @@ export function HowWeWork() {
                     <Icon className="h-5 w-5 text-gold" strokeWidth={1.6} />
                   </div>
                 </div>
-                <h3 className="mt-6 font-display text-lg text-foreground">
-                  {s.title}
-                </h3>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
-                  {s.body}
-                </p>
+                <h3 className="mt-6 font-display text-lg text-foreground">{s.title}</h3>
+                <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">{s.body}</p>
               </motion.li>
             );
           })}

@@ -5,10 +5,7 @@
  */
 export function AnimatedBackdrop() {
   return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-    >
+    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       {/* Base radial wash — warm gold to deep navy */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_20%_-10%,color-mix(in_oklab,var(--color-gold)_18%,transparent),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_90%_10%,color-mix(in_oklab,var(--color-steel)_22%,transparent),transparent_55%)]" />

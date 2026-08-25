@@ -34,7 +34,6 @@ export function SectionHeader({
           </p>
         </Reveal>
       )}
-
     </div>
   );
 }

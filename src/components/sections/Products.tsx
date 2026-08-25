@@ -14,10 +14,7 @@ export function Products({
   limit?: number;
   showFilters?: boolean;
 }) {
-  const allCategories = useMemo(
-    () => Array.from(new Set(products.map((p) => p.category))),
-    [],
-  );
+  const allCategories = useMemo(() => Array.from(new Set(products.map((p) => p.category))), []);
   const [active, setActive] = useState<string>("All");
 
   const filtered = useMemo(() => {
@@ -129,7 +126,9 @@ export function Products({
                     Quote on request
                   </span>
                   <a
-                    href={whatsappLink(`Hello DopCellar Merit, I'd like a quote/invoice for: ${p.name}.`)}
+                    href={whatsappLink(
+                      `Hello DopCellar Merit, I'd like a quote/invoice for: ${p.name}.`,
+                    )}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-1.5 text-sm font-medium text-gold transition-colors hover:text-foreground"

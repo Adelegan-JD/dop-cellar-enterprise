@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Sun,
-  Cctv,
-  Flame,
-  KeyRound,
-  Zap,
-  Cpu,
-  Wrench,
-} from "lucide-react";
+import { Sun, Cctv, Flame, KeyRound, Zap, Cpu, Wrench } from "lucide-react";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { fadeUp, staggerChildren } from "@/lib/motion";
 
@@ -23,10 +15,7 @@ const disciplines = [
 
 export function IntegratedPlatform() {
   return (
-    <section
-      id="platform"
-      className="relative border-t border-hairline py-28 md:py-36"
-    >
+    <section id="platform" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center">
           {/* Manifesto */}
@@ -53,12 +42,8 @@ export function IntegratedPlatform() {
                   variants={fadeUp}
                   className="rounded-lg border border-hairline bg-card/60 p-4"
                 >
-                  <div className="text-[11px] uppercase tracking-[0.16em] text-gold">
-                    {p.k}
-                  </div>
-                  <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-                    {p.v}
-                  </p>
+                  <div className="text-[11px] uppercase tracking-[0.16em] text-gold">{p.k}</div>
+                  <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{p.v}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -74,9 +59,7 @@ export function IntegratedPlatform() {
             {/* core */}
             <div className="absolute inset-0 grid place-items-center">
               <div className="rounded-full border border-gold/40 bg-gold/10 px-5 py-4 text-center backdrop-blur">
-                <div className="text-[10px] uppercase tracking-[0.2em] text-gold">
-                  Core Outcome
-                </div>
+                <div className="text-[10px] uppercase tracking-[0.2em] text-gold">Core Outcome</div>
                 <div className="mt-1 font-display text-base text-foreground md:text-lg">
                   Operations
                   <br />
@@ -106,9 +89,7 @@ export function IntegratedPlatform() {
                     <Icon className="h-5 w-5 text-gold" strokeWidth={1.6} />
                   </div>
                   <div className="pointer-events-none absolute left-1/2 top-full mt-2 w-40 -translate-x-1/2 rounded-md border border-hairline bg-background/95 p-2 text-center opacity-0 shadow-md transition-opacity group-hover:opacity-100">
-                    <div className="text-[11px] font-medium text-foreground">
-                      {d.label}
-                    </div>
+                    <div className="text-[11px] font-medium text-foreground">{d.label}</div>
                     <div className="text-[10.5px] text-muted-foreground">{d.role}</div>
                   </div>
                 </motion.div>

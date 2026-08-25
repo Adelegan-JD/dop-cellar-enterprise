@@ -18,9 +18,7 @@ const packages = [
       "Commissioning + 12-month SLA",
     ],
     ctaLabel: "Request branch assessment",
-    ctaHref: whatsappLink(
-      "Hello DopCellar Merit — I'd like to scope a Branch-Ready deployment.",
-    ),
+    ctaHref: whatsappLink("Hello DopCellar Merit — I'd like to scope a Branch-Ready deployment."),
   },
   {
     icon: Sun,
@@ -74,10 +72,7 @@ const packages = [
 
 export function SignaturePackages() {
   return (
-    <section
-      id="packages"
-      className="relative border-t border-hairline py-28 md:py-36"
-    >
+    <section id="packages" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Signature Packages"
@@ -112,12 +107,8 @@ export function SignaturePackages() {
                 <div className="grid h-11 w-11 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">
                   <Icon className="h-5 w-5 text-gold" strokeWidth={1.6} />
                 </div>
-                <h3 className="mt-6 font-display text-2xl text-foreground">
-                  {p.name}
-                </h3>
-                <p className="mt-1.5 text-[13px] text-muted-foreground">
-                  {p.tagline}
-                </p>
+                <h3 className="mt-6 font-display text-2xl text-foreground">{p.name}</h3>
+                <p className="mt-1.5 text-[13px] text-muted-foreground">{p.tagline}</p>
                 <div className="mt-4 text-[11px] uppercase tracking-[0.16em] text-gold/80">
                   {p.price}
                 </div>

@@ -1,13 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import {
-  ShieldAlert,
-  Zap,
-  Flame,
-  Activity,
-  Building,
-  ArrowUpRight,
-} from "lucide-react";
+import { ShieldAlert, Zap, Flame, Activity, Building, ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { fadeUp, staggerChildren } from "@/lib/motion";
 
@@ -84,9 +77,7 @@ export function ProblemsSolved() {
                 <div className="mt-5 text-[11px] uppercase tracking-[0.18em] text-gold">
                   {p.outcome}
                 </div>
-                <h3 className="mt-2 font-display text-xl text-foreground">
-                  {p.problem}
-                </h3>
+                <h3 className="mt-2 font-display text-xl text-foreground">{p.problem}</h3>
                 <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
                   {p.solution}
                 </p>

@@ -19,8 +19,8 @@ export function DualCTA() {
               Book a project assessment.
             </h3>
             <p className="mt-4 max-w-md text-[14.5px] leading-relaxed text-muted-foreground">
-              Site survey, load analysis, and a costed engineering pathway — delivered
-              by our senior engineers within one business week.
+              Site survey, load analysis, and a costed engineering pathway — delivered by our senior
+              engineers within one business week.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -58,8 +58,8 @@ export function DualCTA() {
               Speak to a product specialist.
             </h3>
             <p className="mt-4 max-w-md text-[14.5px] leading-relaxed text-muted-foreground">
-              Specification support, compatible-system pairing, and quotation on our
-              CCTV, access control, alarm, and power catalog.
+              Specification support, compatible-system pairing, and quotation on our CCTV, access
+              control, alarm, and power catalog.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a

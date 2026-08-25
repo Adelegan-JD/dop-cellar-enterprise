@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Layers,
-  BadgeCheck,
-  Wrench,
-  FileCheck2,
-  MapPinned,
-  Radio,
-} from "lucide-react";
+import { Layers, BadgeCheck, Wrench, FileCheck2, MapPinned, Radio } from "lucide-react";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { fadeUp, staggerChildren } from "@/lib/motion";
 
@@ -45,10 +38,7 @@ const pillars = [
 
 export function WhyDopCellar() {
   return (
-    <section
-      id="why-dopcellar"
-      className="relative border-t border-hairline py-28 md:py-36"
-    >
+    <section id="why-dopcellar" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Why DopCellar"
@@ -74,12 +64,8 @@ export function WhyDopCellar() {
                 <div className="grid h-11 w-11 place-items-center rounded-md bg-gold/10 ring-1 ring-gold/30">
                   <Icon className="h-5 w-5 text-gold" strokeWidth={1.6} />
                 </div>
-                <h3 className="mt-5 font-display text-lg text-foreground">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
-                  {p.body}
-                </p>
+                <h3 className="mt-5 font-display text-lg text-foreground">{p.title}</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{p.body}</p>
               </motion.div>
             );
           })}

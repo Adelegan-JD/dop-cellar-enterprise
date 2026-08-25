@@ -38,10 +38,7 @@ const faqs = [
 export function FAQs() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section
-      id="faqs"
-      className="relative border-t border-hairline py-28 md:py-36"
-    >
+    <section id="faqs" className="relative border-t border-hairline py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Frequently Asked"
@@ -60,9 +57,7 @@ export function FAQs() {
                   className="flex w-full items-start justify-between gap-6 px-6 py-7 text-left md:px-8 transition-colors hover:bg-surface/40"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-display text-lg text-foreground md:text-xl">
-                    {f.q}
-                  </span>
+                  <span className="font-display text-lg text-foreground md:text-xl">{f.q}</span>
                   <Plus
                     className={`mt-1 h-5 w-5 shrink-0 text-gold transition-transform duration-300 ${
                       isOpen ? "rotate-45" : ""

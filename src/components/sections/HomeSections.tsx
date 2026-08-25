@@ -121,9 +121,7 @@ export function HomeSections() {
                 <div className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                   Solar solution inquiry
                 </div>
-                <div className="font-display text-xl text-foreground">
-                  Request a solar quote
-                </div>
+                <div className="font-display text-xl text-foreground">Request a solar quote</div>
               </div>
             </div>
             <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-gold" />

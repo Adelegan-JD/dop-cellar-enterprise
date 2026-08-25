@@ -53,7 +53,11 @@ async function wm(inp, out) {
   await sharp(base)
     .composite([
       { input: strip, left: stripLeft, top: stripTop },
-      { input: logo, left: stripLeft + 12, top: stripTop + Math.round((stripMeta.height - logoMeta.height) / 2) },
+      {
+        input: logo,
+        left: stripLeft + 12,
+        top: stripTop + Math.round((stripMeta.height - logoMeta.height) / 2),
+      },
     ])
     .jpeg({ quality: 82, mozjpeg: true })
     .toFile(out);

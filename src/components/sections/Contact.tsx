@@ -34,7 +34,7 @@ export function Contact() {
       return;
     }
     setSubmitting(true);
-    // Future: POST to a Lovable Cloud edge function / CRM endpoint.
+    // Future: submit leads to the company's CRM/backend API.
     await new Promise((r) => setTimeout(r, 600));
     setSubmitting(false);
     toast.success("Request received. Our team will respond within one business day.");
@@ -42,7 +42,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative border-t border-hairline bg-surface/40 py-28 md:py-36">
+    <section
+      id="contact"
+      className="relative border-t border-hairline bg-surface/40 py-28 md:py-36"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Get in Touch"
@@ -54,11 +57,7 @@ export function Contact() {
           <div className="lg:col-span-5">
             <div className="space-y-6">
               {site.offices.map((o) => (
-                <ContactRow
-                  key={o.city}
-                  icon={<MapPin className="h-4 w-4" />}
-                  label={o.role}
-                >
+                <ContactRow key={o.city} icon={<MapPin className="h-4 w-4" />} label={o.role}>
                   {o.line1}
                   {o.line2 && (
                     <>
@@ -142,10 +141,24 @@ export function Contact() {
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Full Name" name="name" required placeholder="Samuel Dopamu" />
-              <Field label="Email" name="email" type="email" required placeholder="you@company.com" />
-              <Field label="Company" name="company" placeholder="Organization" className="sm:col-span-2" />
+              <Field
+                label="Email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@company.com"
+              />
+              <Field
+                label="Company"
+                name="company"
+                placeholder="Organization"
+                className="sm:col-span-2"
+              />
               <div className="sm:col-span-2">
-                <Label htmlFor="message" className="text-[12px] uppercase tracking-[0.16em] text-muted-foreground">
+                <Label
+                  htmlFor="message"
+                  className="text-[12px] uppercase tracking-[0.16em] text-muted-foreground"
+                >
                   Project Brief
                 </Label>
                 <Textarea
@@ -217,7 +230,10 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <Label htmlFor={name} className="text-[12px] uppercase tracking-[0.16em] text-muted-foreground">
+      <Label
+        htmlFor={name}
+        className="text-[12px] uppercase tracking-[0.16em] text-muted-foreground"
+      >
         {label}
         {required && <span className="ml-1 text-gold">*</span>}
       </Label>

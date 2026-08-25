@@ -72,12 +72,8 @@ export function SectorSolutions() {
                     {s.outcome}
                   </span>
                 </div>
-                <h3 className="mt-6 font-display text-2xl text-foreground">
-                  {s.title}
-                </h3>
-                <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
-                  {s.body}
-                </p>
+                <h3 className="mt-6 font-display text-2xl text-foreground">{s.title}</h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">{s.body}</p>
                 <div className="mt-5 flex flex-wrap gap-1.5">
                   {s.tags.map((t) => (
                     <span

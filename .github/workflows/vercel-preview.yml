@@ -39,14 +39,6 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Swap in production Vite config
-        run: |
-          if [ -f vite.config.production.ts ]; then
-            mv vite.config.ts vite.config.lovable.ts
-            mv vite.config.production.ts vite.config.ts
-          fi
-          rm -f src/server.ts wrangler.jsonc
-
       - name: Install Vercel CLI
         run: bun add -g vercel@latest
 

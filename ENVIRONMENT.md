@@ -9,13 +9,13 @@ See [`.env.example`](./.env.example) for the full list of variables.
 
 ## The two flavors
 
-| Prefix      | Where it lives             | Accessed via              | Bundled into client? | Use for                                  |
-| ----------- | -------------------------- | ------------------------- | -------------------- | ---------------------------------------- |
-| `VITE_*`    | `.env*` files / host UI    | `import.meta.env.VITE_X`  | Yes (build time)     | Public URLs, anon/publishable keys       |
-| (anything)  | Host secret store          | `process.env.X` at runtime| No                   | API keys, service-role keys, webhooks    |
+| Prefix     | Where it lives          | Accessed via               | Bundled into client? | Use for                               |
+| ---------- | ----------------------- | -------------------------- | -------------------- | ------------------------------------- |
+| `VITE_*`   | `.env*` files / host UI | `import.meta.env.VITE_X`   | Yes (build time)     | Public URLs, anon/publishable keys    |
+| (anything) | Host secret store       | `process.env.X` at runtime | No                   | API keys, service-role keys, webhooks |
 
 **Golden rule:** Never reference `process.env.X` at module scope. Read it
-*inside* a server function `.handler()` body or a server route handler.
+_inside_ a server function `.handler()` body or a server route handler.
 Otherwise Vite cannot replace it and you'll get `undefined` in production.
 
 ```ts
@@ -62,11 +62,11 @@ bun run dev
 
 **Required GitHub secrets** for the workflow:
 
-| Secret              | Where to get it                                         |
-| ------------------- | ------------------------------------------------------- |
-| `VERCEL_TOKEN`      | https://vercel.com/account/tokens                       |
-| `VERCEL_ORG_ID`     | Run `vercel link` locally → `.vercel/project.json`      |
-| `VERCEL_PROJECT_ID` | Run `vercel link` locally → `.vercel/project.json`      |
+| Secret              | Where to get it                                    |
+| ------------------- | -------------------------------------------------- |
+| `VERCEL_TOKEN`      | https://vercel.com/account/tokens                  |
+| `VERCEL_ORG_ID`     | Run `vercel link` locally → `.vercel/project.json` |
+| `VERCEL_PROJECT_ID` | Run `vercel link` locally → `.vercel/project.json` |
 
 ---
 

@@ -7,7 +7,10 @@ import { staggerChildren, fadeUp } from "@/lib/motion";
 
 export function Services() {
   return (
-    <section id="services" className="relative border-t border-hairline bg-surface/40 py-28 md:py-36">
+    <section
+      id="services"
+      className="relative border-t border-hairline bg-surface/40 py-28 md:py-36"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <SectionHeader
