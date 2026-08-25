@@ -1,129 +1,102 @@
-# Deploying Dop Cellar Global Limited — Vercel & Docker
-
 # DopCellar Deployment Guide
 
-This document describes how to build and deploy the DopCellar corporate website.
+This project is a TanStack Start application built with Vite and Nitro. It has
+two supported production targets:
 
-## Stack
-
-- React
-- TanStack Start
-- TanStack Router
-- Vite
-- Tailwind CSS
-- TypeScript
-- Node.js
-- Vercel
-- Docker
+- **Vercel**, using Nitro's Vercel preset and Vercel Functions
+- **Docker**, using Nitro's portable Node server output
 
 ## Local development
+
+Install dependencies and start the Vite development server:
 
 ```bash
 bun install
 bun run dev
 ```
 
-Follow this guide once, after exporting the repo to GitHub and pulling it into VS Code.
-
----
-
-## One-time migration (do this after `git pull` in VS Code)
-
-### 1. Swap the Vite config
+For a local production build and server:
 
 ```bash
-mv vite.config.ts vite.config.lovable.ts     # keep as backup, ignored at runtime
-mv vite.config.production.ts vite.config.ts
-```
-
-### 2. Remove the Worker-specific server entry
-
-The file `src/server.ts` is a Cloudflare Worker `fetch` handler. Outside Lovable
-you don't need it — TanStack Start's own SSR entry handles requests on Node.
-
-```bash
-rm src/server.ts wrangler.jsonc
-```
-
-If you also see `@cloudflare/vite-plugin` in `package.json` dependencies, you
-can remove it (optional, just keeps the dep tree clean):
-
-```bash
-bun remove @cloudflare/vite-plugin @lovable.dev/vite-tanstack-config
-bun add -D vite @vitejs/plugin-react vite-tsconfig-paths @tailwindcss/vite
-```
-
-### 3. Verify the build locally
-
-```bash
-bun install
 bun run build
-node .output/server/index.mjs   # should boot on http://localhost:3000
+node .output/server/index.mjs
 ```
 
-If that works, you're ready for both Vercel and Docker.
+The server listens on port `3000` by default. Set `PORT` to use another port.
 
----
+## Vercel
 
-## Deploying to Vercel
+### Dashboard deployment
 
-1. Push your repo to GitHub.
-2. In Vercel: **Add New → Project** → import the repo.
-3. Framework preset: **Other** (Vercel auto-detects via `vercel.json`).
-4. Add environment variables under **Settings → Environment Variables**
-   (none required for the marketing site today; add them as you wire backend features).
-5. Deploy. Subsequent `git push` to your default branch redeploys automatically.
+1. Import the repository into Vercel.
+2. Use the repository root as the project root.
+3. Let Vercel detect the TanStack Start/Nitro framework.
+4. Configure environment variables in the Vercel project settings.
+5. Deploy.
 
-`vercel.json` is already included and points the build at `.output/public`.
+The project does not require a `vercel.json`. Nitro generates the Vercel Build
+Output API configuration, including the server function and static asset
+routes, during `vite build`. Do not set a custom `outputDirectory`; `.vercel/output`
+is generated for Vercel's deployment pipeline.
 
----
+Vercel reads the `build` script from `package.json`, so the build command is
+`bun run build` by convention. No custom routes, rewrites, or function mappings
+are required for the current application.
 
-## Deploying with Docker
+### GitHub Actions deployment
 
-A production-ready multi-stage `Dockerfile` is included.
+`.github/workflows/vercel-preview.yml` deploys pull requests as previews and
+pushes to `main` as production deployments. It requires these repository
+secrets:
+
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+The workflow pulls the matching Vercel environment, runs `vercel build`, and
+deploys the resulting prebuilt output.
+
+## Docker
+
+The multi-stage `Dockerfile` builds Nitro's `node-server` preset and runs the
+resulting `.output/server/index.mjs` file.
+
+Build and run the image:
 
 ```bash
-# Build the image
 docker build -t dopcellar-web .
-
-# Run it
-docker run --rm -p 3000:3000 --name dopcellar dopcellar-web
+docker run --rm -p 3000:3000 --name dopcellar-web dopcellar-web
 ```
 
-Visit http://localhost:3000.
+Open `http://localhost:3000`. The image exposes port `3000` and includes a
+health check at `/api/health`. To use another port, pass it to the container:
 
-To deploy the image to a registry (DigitalOcean, AWS ECR, Fly.io, Render, etc.):
+```bash
+docker run --rm -e PORT=8080 -p 8080:8080 --name dopcellar-web dopcellar-web
+```
+
+To publish the image to a registry:
 
 ```bash
 docker tag dopcellar-web registry.example.com/dopcellar-web:latest
 docker push registry.example.com/dopcellar-web:latest
 ```
 
-The container listens on `PORT` (default 3000). Override with `-e PORT=8080`.
+## CI
 
----
+`.github/workflows/ci.yml` installs the locked Bun dependency tree and runs the
+production build on every push and pull request. CI sets
+`NITRO_PRESET=node-server` so the checked build matches the Docker target.
 
-## Adding backend features later (inventory, dashboards, AI, WhatsApp, etc.)
+## Environment variables
 
-Both Vercel and Node Docker support TanStack Start's full backend toolbox:
+See `ENVIRONMENT.md` and `.env.example` for configuration guidance. Public
+`VITE_*` variables are embedded at build time. Server-only variables must be
+read inside server handlers at runtime and must not be exposed to client code.
 
-- **`createServerFn`** (in files like `src/lib/*.functions.ts`) — typed RPC from React components.
-- **Server routes** under `src/routes/api/*` — raw HTTP for webhooks (WhatsApp Cloud API, payment callbacks, AI provider callbacks).
-- **Database** — Postgres via Supabase, Neon, or a managed Postgres next to your Docker container.
+## Backend additions
 
-Two rules to keep deployment portable as you grow:
-
-1. **Never use `process.env.X` at module scope** — read env vars inside the handler body. Vite bundles modules at build time and `process.env` is only defined at runtime.
-2. **Avoid Node-only native modules** in server functions (`sharp`, `puppeteer`, `child_process`) unless you've confirmed they work in the target runtime. Prefer HTTP API calls.
-
----
-
-## What stays identical across Lovable / Vercel / Docker
-
-- All component code in `src/components/`
-- All page routes in `src/routes/`
-- Content config in `src/config/site.ts` and `src/config/content.ts`
-- Design tokens in `src/styles.css`
-- Tailwind v4 configuration
-
-Editing those in VS Code and pushing to GitHub will redeploy cleanly on either target.
+TanStack Start server functions and routes under `src/routes/api/` can be added
+as backend features grow. Keep handlers portable across Vercel Functions and
+the Node Docker runtime, and confirm compatibility before adding Node-specific
+native modules.

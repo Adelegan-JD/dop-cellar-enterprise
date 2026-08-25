@@ -1,6 +1,5 @@
 node_modules
 .git
-.lovable
 .tanstack
 .output
 .vercel
